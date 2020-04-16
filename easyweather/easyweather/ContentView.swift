@@ -74,7 +74,7 @@ struct Home : View {
             .padding(.top,(UIApplication.shared.windows.first?.safeAreaInsets.top)!+15)
             .padding(.horizontal)
             .padding(.bottom,10)
-          // .background(Color.gray)
+          // ..background(Color.gray)
             Spacer()
         }
         .edgesIgnoringSafeArea(.top)
