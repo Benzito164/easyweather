@@ -11,12 +11,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing:0){
+        VStack(spacing: 10){
+            
             TopSearchBar()
             CircleLoadingAnimation()
+            Cards() 
             Spacer()
-           Cards()
-       
+            Spacer()
+            Spacer()
         }.edgesIgnoringSafeArea(.bottom)
     }
 }

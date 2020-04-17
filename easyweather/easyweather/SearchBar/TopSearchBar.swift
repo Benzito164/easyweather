@@ -64,7 +64,7 @@ struct TopSearchBar : View {
             .padding(.horizontal)
             .padding(.bottom,10)
            // .background(Color.orange)
-            Spacer()
+          //  Spacer()
         }
         .edgesIgnoringSafeArea(.top)
     }
