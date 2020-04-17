@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		354C04EA7B6A780C11249395 /* libPods-easyweather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F162C95FA653566EFAA5EFCA /* libPods-easyweather.a */; };
+		1846C8D4D24C0567798895F2 /* Pods_easyweather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608030C7D8221D37C5B06FF5 /* Pods_easyweather.framework */; };
 		B12DB4522447A71E00FC9A52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4512447A71E00FC9A52 /* AppDelegate.swift */; };
 		B12DB4542447A71E00FC9A52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */; };
 		B12DB4562447A71E00FC9A52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4552447A71E00FC9A52 /* ContentView.swift */; };
@@ -22,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		074AED97B81684BFEEABF29D /* Pods-easyweather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyweather.debug.xcconfig"; path = "Target Support Files/Pods-easyweather/Pods-easyweather.debug.xcconfig"; sourceTree = "<group>"; };
+		608030C7D8221D37C5B06FF5 /* Pods_easyweather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_easyweather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12DB44E2447A71E00FC9A52 /* easyweather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easyweather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12DB4512447A71E00FC9A52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		B1BFC44024492F89001021F6 /* TopSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchBar.swift; sourceTree = "<group>"; };
 		B1BFC44324493845001021F6 /* CircleLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoadingAnimation.swift; sourceTree = "<group>"; };
 		EB1E4F495328563022A5C93C /* Pods-easyweather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyweather.release.xcconfig"; path = "Target Support Files/Pods-easyweather/Pods-easyweather.release.xcconfig"; sourceTree = "<group>"; };
-		F162C95FA653566EFAA5EFCA /* libPods-easyweather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-easyweather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				354C04EA7B6A780C11249395 /* libPods-easyweather.a in Frameworks */,
+				1846C8D4D24C0567798895F2 /* Pods_easyweather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +121,7 @@
 		BD1443F66528144F869ED9F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F162C95FA653566EFAA5EFCA /* libPods-easyweather.a */,
+				608030C7D8221D37C5B06FF5 /* Pods_easyweather.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +146,7 @@
 				B12DB44A2447A71E00FC9A52 /* Sources */,
 				B12DB44B2447A71E00FC9A52 /* Frameworks */,
 				B12DB44C2447A71E00FC9A52 /* Resources */,
+				EA4E878C14CC76ABAAE44C0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,6 +225,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA4E878C14CC76ABAAE44C0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-easyweather/Pods-easyweather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-easyweather/Pods-easyweather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-easyweather/Pods-easyweather-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

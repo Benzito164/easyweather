@@ -3,7 +3,7 @@
 
 target 'easyweather' do
   # Comment the next line if you don't want to use dynamic frameworks
-  :modular_headers
+  use_frameworks!
 
   # Pods for easyweather
 pod 'Firebase/Analytics'
