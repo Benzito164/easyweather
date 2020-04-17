@@ -68,12 +68,12 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Analytics
+  - FirebaseCore (from `https://github.com/firebase/firebase-ios-sdk.git`, branch `master`)
 
 SPEC REPOS:
   trunk:
     - Firebase
     - FirebaseAnalytics
-    - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
     - FirebaseInstallations
@@ -83,6 +83,16 @@ SPEC REPOS:
     - GoogleUtilities
     - nanopb
     - PromisesObjC
+
+EXTERNAL SOURCES:
+  FirebaseCore:
+    :branch: master
+    :git: https://github.com/firebase/firebase-ios-sdk.git
+
+CHECKOUT OPTIONS:
+  FirebaseCore:
+    :commit: 88bdcdd39b33bb50bcc75604bc433e8322604a8c
+    :git: https://github.com/firebase/firebase-ios-sdk.git
 
 SPEC CHECKSUMS:
   Firebase: 32f9520684e87c7af3f0704f7f88042626d6b536
@@ -98,6 +108,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: f6859d0a9f5c2fa25b1d0bf2b4de804212919c15
+PODFILE CHECKSUM: 08d35cab3954466605a48938893cea4765dbd0e6
 
 COCOAPODS: 1.8.4
