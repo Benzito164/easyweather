@@ -13,6 +13,7 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing:0){
             TopSearchBar()
+            CircleLoadingAnimation()
             Spacer()
            Cards()
        
