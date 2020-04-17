@@ -17,6 +17,7 @@
 		B1BFC43B2448D997001021F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1BFC43A2448D997001021F6 /* GoogleService-Info.plist */; };
 		B1BFC43E24492EE2001021F6 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC43D24492EE2001021F6 /* Cards.swift */; };
 		B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC44024492F89001021F6 /* TopSearchBar.swift */; };
+		B1BFC44424493845001021F6 /* CircleLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC44324493845001021F6 /* CircleLoadingAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		B1BFC43A2448D997001021F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1BFC43D24492EE2001021F6 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		B1BFC44024492F89001021F6 /* TopSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchBar.swift; sourceTree = "<group>"; };
+		B1BFC44324493845001021F6 /* CircleLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoadingAnimation.swift; sourceTree = "<group>"; };
 		EB1E4F495328563022A5C93C /* Pods-easyweather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyweather.release.xcconfig"; path = "Target Support Files/Pods-easyweather/Pods-easyweather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 		B12DB4502447A71E00FC9A52 /* easyweather */ = {
 			isa = PBXGroup;
 			children = (
+				B1BFC442244937EE001021F6 /* LoadingAnimation */,
 				B1BFC43F24492F50001021F6 /* SearchBar */,
 				B1BFC43C24492EAF001021F6 /* StackCards */,
 				B12DB4512447A71E00FC9A52 /* AppDelegate.swift */,
@@ -105,6 +108,14 @@
 				B1BFC44024492F89001021F6 /* TopSearchBar.swift */,
 			);
 			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		B1BFC442244937EE001021F6 /* LoadingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFC44324493845001021F6 /* CircleLoadingAnimation.swift */,
+			);
+			path = LoadingAnimation;
 			sourceTree = "<group>";
 		};
 		BD1443F66528144F869ED9F2 /* Frameworks */ = {
@@ -245,6 +256,7 @@
 				B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */,
 				B12DB4562447A71E00FC9A52 /* ContentView.swift in Sources */,
 				B1BFC43E24492EE2001021F6 /* Cards.swift in Sources */,
+				B1BFC44424493845001021F6 /* CircleLoadingAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
