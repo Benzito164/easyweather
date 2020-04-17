@@ -15,6 +15,8 @@
 		B12DB45B2447A71F00FC9A52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12DB45A2447A71F00FC9A52 /* Preview Assets.xcassets */; };
 		B12DB45E2447A71F00FC9A52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12DB45C2447A71F00FC9A52 /* LaunchScreen.storyboard */; };
 		B1BFC43B2448D997001021F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1BFC43A2448D997001021F6 /* GoogleService-Info.plist */; };
+		B1BFC43E24492EE2001021F6 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC43D24492EE2001021F6 /* Cards.swift */; };
+		B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC44024492F89001021F6 /* TopSearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		B12DB45D2447A71F00FC9A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B12DB45F2447A71F00FC9A52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1BFC43A2448D997001021F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B1BFC43D24492EE2001021F6 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		B1BFC44024492F89001021F6 /* TopSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchBar.swift; sourceTree = "<group>"; };
 		EB1E4F495328563022A5C93C /* Pods-easyweather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyweather.release.xcconfig"; path = "Target Support Files/Pods-easyweather/Pods-easyweather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +69,8 @@
 		B12DB4502447A71E00FC9A52 /* easyweather */ = {
 			isa = PBXGroup;
 			children = (
+				B1BFC43F24492F50001021F6 /* SearchBar */,
+				B1BFC43C24492EAF001021F6 /* StackCards */,
 				B12DB4512447A71E00FC9A52 /* AppDelegate.swift */,
 				B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */,
 				B12DB4552447A71E00FC9A52 /* ContentView.swift */,
@@ -83,6 +89,22 @@
 				B12DB45A2447A71F00FC9A52 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B1BFC43C24492EAF001021F6 /* StackCards */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFC43D24492EE2001021F6 /* Cards.swift */,
+			);
+			path = StackCards;
+			sourceTree = "<group>";
+		};
+		B1BFC43F24492F50001021F6 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFC44024492F89001021F6 /* TopSearchBar.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		BD1443F66528144F869ED9F2 /* Frameworks */ = {
@@ -220,7 +242,9 @@
 			files = (
 				B12DB4522447A71E00FC9A52 /* AppDelegate.swift in Sources */,
 				B12DB4542447A71E00FC9A52 /* SceneDelegate.swift in Sources */,
+				B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */,
 				B12DB4562447A71E00FC9A52 /* ContentView.swift in Sources */,
+				B1BFC43E24492EE2001021F6 /* Cards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
