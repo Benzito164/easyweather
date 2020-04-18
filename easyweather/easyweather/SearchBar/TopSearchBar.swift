@@ -13,8 +13,9 @@ import SwiftUI
 struct TopSearchBar : View {
      @State var show = false
      @State var text = ""
+    
     var body: some View {
-        VStack(spacing:0){
+        VStack(spacing:20){
             HStack {
                 if !self.show {
                     Text("Search")
@@ -27,24 +28,34 @@ struct TopSearchBar : View {
                 HStack{
                     
                     if self.show {
-                        Image("search1")
-                        .padding(.horizontal,8)
+                        VStack{
+                            HStack{
+                                Image("search1")
+                                .padding(.horizontal,8)
 
-                        TextField("Search.....", text: self.$text)
-                        Button(action: {
-                            withAnimation {
-                                 self.show.toggle()
-                            }
-                          
-                        }){
-                            Image(systemName: "xmark").foregroundColor(.black)
+                                TextField("Search.....", text: self.$text)
+                                Button(action: {
+                                    withAnimation {
+                    
+                                         self.show.toggle()
+                                       //  self.text = ""
+                                    }
+                                  
+                                }){
+                                    Image(systemName: "xmark").foregroundColor(.black)
+                                }
+                                .padding(.horizontal,8)
+                            }.padding()
+                            
+                            ResultTableview(searchText: text)
                         }
-                        .padding(.horizontal,8)
+
                     }
                     else {
                         Button(action: {
                             withAnimation {
                                  self.show.toggle()
+                                
                             }
                          }){
                              Image("search1")
@@ -63,7 +74,7 @@ struct TopSearchBar : View {
             .padding(.top,(UIApplication.shared.windows.first?.safeAreaInsets.top)!+15)
             .padding(.horizontal)
             .padding(.bottom,10)
-           // .background(Color.orange)
+            //.background(Color.orange)
           //  Spacer()
         }
         .edgesIgnoringSafeArea(.top)

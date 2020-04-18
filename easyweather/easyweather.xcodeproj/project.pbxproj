@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1846C8D4D24C0567798895F2 /* Pods_easyweather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608030C7D8221D37C5B06FF5 /* Pods_easyweather.framework */; };
+		B124F5F6244A51FA0061EF65 /* ResultTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B124F5F5244A51FA0061EF65 /* ResultTableview.swift */; };
 		B12DB4522447A71E00FC9A52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4512447A71E00FC9A52 /* AppDelegate.swift */; };
 		B12DB4542447A71E00FC9A52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */; };
 		B12DB4562447A71E00FC9A52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4552447A71E00FC9A52 /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		074AED97B81684BFEEABF29D /* Pods-easyweather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyweather.debug.xcconfig"; path = "Target Support Files/Pods-easyweather/Pods-easyweather.debug.xcconfig"; sourceTree = "<group>"; };
 		608030C7D8221D37C5B06FF5 /* Pods_easyweather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_easyweather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B124F5F5244A51FA0061EF65 /* ResultTableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableview.swift; sourceTree = "<group>"; };
 		B12DB44E2447A71E00FC9A52 /* easyweather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easyweather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12DB4512447A71E00FC9A52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				B1BFC44024492F89001021F6 /* TopSearchBar.swift */,
+				B124F5F5244A51FA0061EF65 /* ResultTableview.swift */,
 			);
 			path = SearchBar;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B12DB4522447A71E00FC9A52 /* AppDelegate.swift in Sources */,
+				B124F5F6244A51FA0061EF65 /* ResultTableview.swift in Sources */,
 				B12DB4542447A71E00FC9A52 /* SceneDelegate.swift in Sources */,
 				B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */,
 				B12DB4562447A71E00FC9A52 /* ContentView.swift in Sources */,
