@@ -15,6 +15,7 @@
 		B12DB4582447A71F00FC9A52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12DB4572447A71F00FC9A52 /* Assets.xcassets */; };
 		B12DB45B2447A71F00FC9A52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12DB45A2447A71F00FC9A52 /* Preview Assets.xcassets */; };
 		B12DB45E2447A71F00FC9A52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12DB45C2447A71F00FC9A52 /* LaunchScreen.storyboard */; };
+		B173650A244B8B3800246AD5 /* LocationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1736509244B8B3800246AD5 /* LocationDetail.swift */; };
 		B18C5ED92449BEDF0031214F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B18C5ED82449BEDF0031214F /* GoogleService-Info.plist */; };
 		B1BFC43E24492EE2001021F6 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC43D24492EE2001021F6 /* Cards.swift */; };
 		B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC44024492F89001021F6 /* TopSearchBar.swift */; };
@@ -33,6 +34,7 @@
 		B12DB45A2447A71F00FC9A52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B12DB45D2447A71F00FC9A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B12DB45F2447A71F00FC9A52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1736509244B8B3800246AD5 /* LocationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetail.swift; sourceTree = "<group>"; };
 		B18C5ED82449BEDF0031214F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1BFC43D24492EE2001021F6 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		B1BFC44024492F89001021F6 /* TopSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchBar.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		B12DB4502447A71E00FC9A52 /* easyweather */ = {
 			isa = PBXGroup;
 			children = (
+				B1736508244B8B1400246AD5 /* DetailedView */,
 				B1BFC442244937EE001021F6 /* LoadingAnimation */,
 				B1BFC43F24492F50001021F6 /* SearchBar */,
 				B1BFC43C24492EAF001021F6 /* StackCards */,
@@ -94,6 +97,14 @@
 				B12DB45A2447A71F00FC9A52 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B1736508244B8B1400246AD5 /* DetailedView */ = {
+			isa = PBXGroup;
+			children = (
+				B1736509244B8B3800246AD5 /* LocationDetail.swift */,
+			);
+			path = DetailedView;
 			sourceTree = "<group>";
 		};
 		B1BFC43C24492EAF001021F6 /* StackCards */ = {
@@ -257,6 +268,7 @@
 				B12DB4522447A71E00FC9A52 /* AppDelegate.swift in Sources */,
 				B124F5F6244A51FA0061EF65 /* ResultTableview.swift in Sources */,
 				B12DB4542447A71E00FC9A52 /* SceneDelegate.swift in Sources */,
+				B173650A244B8B3800246AD5 /* LocationDetail.swift in Sources */,
 				B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */,
 				B12DB4562447A71E00FC9A52 /* ContentView.swift in Sources */,
 				B1BFC43E24492EE2001021F6 /* Cards.swift in Sources */,
@@ -419,7 +431,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beni.easyweather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = easyweather;
+				PROVISIONING_PROFILE_SPECIFIER = "app distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -444,7 +456,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beni.easyweather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = easyweather;
+				PROVISIONING_PROFILE_SPECIFIER = "app distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
