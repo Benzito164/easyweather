@@ -22,10 +22,14 @@ struct tableView : View {
     var body: some View {
         VStack{
             if searchText.isEmpty{
-                List{
-                    Text("No Results found").listRowBackground(Color.blue.opacity(0.2))
-                                            .padding(.bottom)
-                }.frame(height: UIScreen.main.bounds.height / 20).cornerRadius(13)
+                NavigationView{
+                    List{
+                        NavigationLink(destination:LocationDetail()){
+                            Text("No Results found").listRowBackground(Color.blue.opacity(0.2))
+                                                        .padding(.bottom)
+                            }.frame(height: UIScreen.main.bounds.height / 20).cornerRadius(13)
+                        }
+                }
 
             } else {
                 List{
