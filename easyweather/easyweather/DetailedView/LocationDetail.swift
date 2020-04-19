@@ -9,16 +9,30 @@
 import SwiftUI
 
 struct LocationDetail: View {
+       @State var searchedLocation:String = "Unkown Location"
+       @State private var showDetail = false
        var body: some View {
+        VStack{
+            HStack{
+                Spacer()
+                Button(action: {
+
+                }){
+                Image("add")
+                    .foregroundColor(.black)
+
+                }.padding()
+                .buttonStyle(GradientButtonStyle())
+                Spacer()
+            }
+            
         ScrollView(.vertical, showsIndicators: false) {
-            VStack{
-                Text("London").font(.title)
                        ForEach(1...5, id: \.self){_ in
                            CardShimmer()
                        }
                    }
-        } 
-       
+    }
+       .navigationBarTitle(searchedLocation)
        
     }
 }
@@ -63,8 +77,11 @@ struct CardShimmer : View {
     }
 }
 
-//struct LocationDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LocationDetail()
-//    }
-//}
+struct GradientButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .background(configuration.isPressed ? Color.green : Color.yellow).animation(.easeIn(duration:0.8))
+            .cornerRadius(30)
+            .scaleEffect(configuration.isPressed ? 3: 1).animation(.easeIn(duration:0.8))
+    }
+}
