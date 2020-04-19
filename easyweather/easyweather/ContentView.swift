@@ -25,7 +25,7 @@ struct ContentView: View {
                             }
                             .navigationBarTitle("Weather")
                         .navigationBarHidden(true)
-                        }
+                        }.preferredColorScheme(.light)
     }
 }
 
