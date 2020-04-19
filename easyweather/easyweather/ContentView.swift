@@ -11,15 +11,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 10){
-            
-            TopSearchBar()
-            CircleLoadingAnimation()
-            Cards() 
-            Spacer()
-            Spacer()
-            Spacer()
-        }.edgesIgnoringSafeArea(.bottom)
+                        NavigationView{
+                            VStack{
+                                Spacer().frame(height:0)
+                                VStack(spacing:1){
+                                    TopSearchBar()
+                                     CircleLoadingAnimation()
+                                     Cards()
+                                     Spacer()
+                                     Spacer()
+                                     Spacer()
+                                }
+                            }
+                            .navigationBarTitle("Weather")
+                        .navigationBarHidden(true)
+                        }
     }
 }
 

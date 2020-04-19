@@ -19,24 +19,24 @@ struct ResultTableview: View {
 struct tableView : View {
     var searchText:String = ""
     var names : [String]=[]
+    @State var show = false
     var body: some View {
         VStack{
             if searchText.isEmpty{
-                NavigationView{
+
                     List{
                         NavigationLink(destination:LocationDetail()){
-                            Text("No Results found").listRowBackground(Color.blue.opacity(0.2))
-                                                        .padding(.bottom)
-                            }.frame(height: UIScreen.main.bounds.height / 20).cornerRadius(13)
+                            Text("No Results found")
+                            .padding()
+                            }.cornerRadius(13).listRowBackground(Color.red.opacity(0.2))
                         }
-                }
-
             } else {
-                List{
-                    ForEach(generateRandomArrayFromSingleParameter(string: searchText),id:\.self){ name in
-                        Text(name).listRowBackground(Color.blue.opacity(0.2)).cornerRadius(13).padding(.bottom)
-                    }
-                }.frame(height: UIScreen.main.bounds.height / 5).cornerRadius(13)
+                List(generateRandomArrayFromSingleParameter(string: searchText),id:\.self){ name in
+                    NavigationLink(destination:LocationDetail()){
+                         Text(name)
+                            .padding()
+                    }.cornerRadius(13).listRowBackground(Color.blue.opacity(0.2))
+                }
             }
            
         }
