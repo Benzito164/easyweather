@@ -20,7 +20,7 @@ struct Cards:View {
                     Color.blue
                     VStack(spacing: 5){
                         HStack{
-                            LottieView(animationName: "storm").frame(width: 100, height: 100)
+                           
                             Text("Rainy")
                             .fontWeight(.bold)
                             .font(.title)
@@ -40,7 +40,7 @@ struct Cards:View {
                     Color.orange
                     VStack(spacing: 5){
                         HStack{
-                            LottieView(animationName: "storm").frame(width: 100, height: 100)
+                           
                             Text("Rainy")
                             .fontWeight(.bold)
                             .font(.title)
@@ -61,7 +61,7 @@ struct Cards:View {
                         Color.red
                         VStack(spacing: 5){
                             HStack{
-                                LottieView(animationName: "storm").frame(width: 100, height: 100)
+                               
                                 Text("Rainy")
                                 .fontWeight(.bold)
                                 .font(.title)
