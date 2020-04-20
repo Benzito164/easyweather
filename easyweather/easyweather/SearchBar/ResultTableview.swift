@@ -32,7 +32,7 @@ struct tableView : View {
                         }
             } else {
                 List(generateRandomArrayFromSingleParameter(string: searchText),id:\.self){ name in
-                    NavigationLink(destination:LocationDetail()){
+                    NavigationLink(destination:LocationDetail(searchedLocation: self.searchText)){
                          Text(name)
                             .padding()
                     }.cornerRadius(13).listRowBackground(Color.blue.opacity(0.2))
