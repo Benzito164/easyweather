@@ -11,19 +11,25 @@ import SwiftUI
 struct LocationDetail: View {
        @State var searchedLocation:String = "Unkown Location"
        @State private var showDetail = false
+      @State private var showAnimation = false
        var body: some View {
         VStack{
+         
             HStack{
                 Spacer()
                 Button(action: {
-
+                    self.showAnimation.toggle()
+                    
+                    print("tapped")
+                    
+                        //.frame(width: 150, height: 150)
                 }){
-                Image("add")
-                    .foregroundColor(.black)
-
+                        Image("add")
+                        .foregroundColor(.black)
                 }.padding()
-                .buttonStyle(GradientButtonStyle())
+                //.buttonStyle(GradientButtonStyle())
                 Spacer()
+
             }
             
         ScrollView(.vertical, showsIndicators: false) {
@@ -83,5 +89,10 @@ struct GradientButtonStyle: ButtonStyle {
             .background(configuration.isPressed ? Color.green : Color.yellow).animation(.easeIn(duration:0.8))
             .cornerRadius(30)
             .scaleEffect(configuration.isPressed ? 3: 1).animation(.easeIn(duration:0.8))
+    }
+}
+struct CPreviews: PreviewProvider {
+    static var previews: some View {
+          LocationDetail()
     }
 }
