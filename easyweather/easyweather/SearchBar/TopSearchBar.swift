@@ -58,7 +58,7 @@ struct TopSearchBar : View {
                                 
                             }
                          }){
-                             Image("search1")
+                             Image("search")
                                 .scaledToFit()
                                 //.foregroundColor(.white)
                                 .padding(10)
