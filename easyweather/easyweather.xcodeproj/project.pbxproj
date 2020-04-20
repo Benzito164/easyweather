@@ -12,7 +12,6 @@
 		B12DB4522447A71E00FC9A52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4512447A71E00FC9A52 /* AppDelegate.swift */; };
 		B12DB4542447A71E00FC9A52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */; };
 		B12DB4562447A71E00FC9A52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4552447A71E00FC9A52 /* ContentView.swift */; };
-		B12DB4582447A71F00FC9A52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12DB4572447A71F00FC9A52 /* Assets.xcassets */; };
 		B12DB45B2447A71F00FC9A52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12DB45A2447A71F00FC9A52 /* Preview Assets.xcassets */; };
 		B12DB45E2447A71F00FC9A52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12DB45C2447A71F00FC9A52 /* LaunchScreen.storyboard */; };
 		B13A66B8244DF3BE009280DF /* storm.json in Resources */ = {isa = PBXBuildFile; fileRef = B13A66B7244DF3BE009280DF /* storm.json */; };
@@ -34,7 +33,6 @@
 		B12DB4512447A71E00FC9A52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B12DB4552447A71E00FC9A52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B12DB4572447A71F00FC9A52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B12DB45A2447A71F00FC9A52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B12DB45D2447A71F00FC9A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B12DB45F2447A71F00FC9A52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 				B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */,
 				B12DB4552447A71E00FC9A52 /* ContentView.swift */,
 				B18C5ED82449BEDF0031214F /* GoogleService-Info.plist */,
-				B12DB4572447A71F00FC9A52 /* Assets.xcassets */,
 				B13A66B6244DF295009280DF /* Lottie Animations */,
 				B12DB45C2447A71F00FC9A52 /* LaunchScreen.storyboard */,
 				B12DB45F2447A71F00FC9A52 /* Info.plist */,
@@ -239,7 +236,6 @@
 				B18C5ED92449BEDF0031214F /* GoogleService-Info.plist in Resources */,
 				B12DB45B2447A71F00FC9A52 /* Preview Assets.xcassets in Resources */,
 				B13A66B8244DF3BE009280DF /* storm.json in Resources */,
-				B12DB4582447A71F00FC9A52 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
