@@ -23,6 +23,7 @@
 		B1BFC43E24492EE2001021F6 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC43D24492EE2001021F6 /* Cards.swift */; };
 		B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC44024492F89001021F6 /* TopSearchBar.swift */; };
 		B1BFC44424493845001021F6 /* CircleLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC44324493845001021F6 /* CircleLoadingAnimation.swift */; };
+		B1CC38F5244E489C00D8749C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1CC38F4244E489C00D8749C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B1BFC43D24492EE2001021F6 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		B1BFC44024492F89001021F6 /* TopSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchBar.swift; sourceTree = "<group>"; };
 		B1BFC44324493845001021F6 /* CircleLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoadingAnimation.swift; sourceTree = "<group>"; };
+		B1CC38F4244E489C00D8749C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB1E4F495328563022A5C93C /* Pods-easyweather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyweather.release.xcconfig"; path = "Target Support Files/Pods-easyweather/Pods-easyweather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 		B12DB4502447A71E00FC9A52 /* easyweather */ = {
 			isa = PBXGroup;
 			children = (
+				B1CC38F4244E489C00D8749C /* Assets.xcassets */,
 				B1736508244B8B1400246AD5 /* DetailedView */,
 				B1BFC442244937EE001021F6 /* LoadingAnimation */,
 				B1BFC43F24492F50001021F6 /* SearchBar */,
@@ -235,6 +238,7 @@
 				B12DB45E2447A71F00FC9A52 /* LaunchScreen.storyboard in Resources */,
 				B18C5ED92449BEDF0031214F /* GoogleService-Info.plist in Resources */,
 				B12DB45B2447A71F00FC9A52 /* Preview Assets.xcassets in Resources */,
+				B1CC38F5244E489C00D8749C /* Assets.xcassets in Resources */,
 				B13A66B8244DF3BE009280DF /* storm.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
