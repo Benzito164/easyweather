@@ -30,7 +30,7 @@ struct TopSearchBar : View {
                     if self.show {
                         VStack{
                             HStack{
-                                Image("search1")
+                                Image("search")
                                 .padding(.horizontal,8)
 
                                 TextField("Search.....", text: self.$text)
