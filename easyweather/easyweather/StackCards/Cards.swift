@@ -72,7 +72,7 @@ struct Cards:View {
                             Spacer()
                         }
 
-                }.frame(width: reader.size.width - 73 , height: 200)
+                }.frame(width: reader.size.width - 74 , height: 200)
                 .cornerRadius(20)
                 .shadow(radius: 20)
                     .gesture(DragGesture().onChanged({ (value) in
