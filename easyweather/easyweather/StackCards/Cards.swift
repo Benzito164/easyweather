@@ -16,23 +16,63 @@ struct Cards:View {
     var body: some View {
         GeometryReader{reader in
             ZStack{
-                VStack{
+                ZStack{
                     Color.blue
-                }.frame(width: reader.size.width - 160, height: 300)
+                    VStack(spacing: 5){
+                        HStack{
+                            LottieView(animationName: "storm").frame(width: 100, height: 100)
+                            Text("Rainy")
+                            .fontWeight(.bold)
+                            .font(.title)
+                            .foregroundColor(.white)
+                            Spacer()
+                            Spacer()
+                        }.padding()
+                        Spacer()
+                    }
+
+                }.frame(width: reader.size.width - self.backViewSize - 10, height: 200)
                 .cornerRadius(20)
                 .shadow(radius: 20)
-                .offset(y: -30)
+                .offset(y: -160)
                 
-                VStack{
+                ZStack{
                     Color.orange
-                }.frame(width: reader.size.width - self.backViewSize, height: 300)
+                    VStack(spacing: 5){
+                        HStack{
+                            LottieView(animationName: "storm").frame(width: 100, height: 100)
+                            Text("Rainy")
+                            .fontWeight(.bold)
+                            .font(.title)
+                            .foregroundColor(.white)
+                            Spacer()
+                            Spacer()
+                        }.padding()
+                        Spacer()
+                    }
+
+                }.frame(width: reader.size.width - self.backViewSize, height: 200)
                 .cornerRadius(20)
                 .shadow(radius: 20)
-                .offset(y: -15)
+                .offset(y: -80)
                 
-                VStack{
-                    Color.red
-                }.frame(width: reader.size.width - 50 , height: 300)
+              //  VStack{
+                    ZStack{
+                        Color.red
+                        VStack(spacing: 5){
+                            HStack{
+                                LottieView(animationName: "storm").frame(width: 100, height: 100)
+                                Text("Rainy")
+                                .fontWeight(.bold)
+                                .font(.title)
+                                .foregroundColor(.white)
+                                Spacer()
+                                Spacer()
+                            }.padding()
+                            Spacer()
+                        }
+
+                }.frame(width: reader.size.width - 73 , height: 200)
                 .cornerRadius(20)
                 .shadow(radius: 20)
                     .gesture(DragGesture().onChanged({ (value) in
@@ -52,3 +92,8 @@ struct Cards:View {
     }
 }
 
+struct Cards_Previews: PreviewProvider {
+    static var previews: some View {
+          Cards()
+    }
+}
