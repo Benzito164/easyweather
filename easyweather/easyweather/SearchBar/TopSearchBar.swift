@@ -31,6 +31,7 @@ struct TopSearchBar : View {
                         VStack{
                             HStack{
                                 Image("search")
+                                .scaledToFit()
                                 .padding(.horizontal,8)
 
                                 TextField("Search.....", text: self.$text)

@@ -96,3 +96,5 @@ struct CPreviews: PreviewProvider {
           LocationDetail()
     }
 }
+
+
