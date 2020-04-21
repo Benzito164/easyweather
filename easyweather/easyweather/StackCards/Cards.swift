@@ -13,6 +13,8 @@ import SwiftUI
 struct Cards:View {
     @State var backViewSize : CGFloat = 80
     @State var size : CGSize = .zero
+    @State var secoundCardSize : CGSize = .zero
+    
     var body: some View {
         GeometryReader{reader in
             ZStack{
@@ -20,7 +22,6 @@ struct Cards:View {
                     Color.blue
                     VStack(spacing: 5){
                         HStack{
-                           
                             Text("Rainy")
                             .fontWeight(.bold)
                             .font(.title)
@@ -34,13 +35,19 @@ struct Cards:View {
                 }.frame(width: reader.size.width - self.backViewSize - 10, height: 200)
                 .cornerRadius(20)
                 .shadow(radius: 20)
-                .offset(y: -160)
-                
+                    .gesture(DragGesture().onChanged({ (value) in
+                        self.size = value.translation
+                    })
+                        .onEnded({ (value) in
+                            self.size = .zero
+                        })
+                )
+                    .offset(y:self.size.height > 1 ? -370 : -160)
+ 
                 ZStack{
                     Color.orange
                     VStack(spacing: 5){
                         HStack{
-                           
                             Text("Rainy")
                             .fontWeight(.bold)
                             .font(.title)
@@ -51,17 +58,24 @@ struct Cards:View {
                         Spacer()
                     }
 
-                }.frame(width: reader.size.width - self.backViewSize, height: 200)
+                }
+                .frame(width: reader.size.width - self.backViewSize, height: 200)
                 .cornerRadius(20)
                 .shadow(radius: 20)
-                .offset(y: -80)
-                
-              //  VStack{
-                    ZStack{
+                    .gesture(DragGesture().onChanged({ (value) in
+                            self.size = value.translation
+                        })
+                            .onEnded({ (value) in
+                                self.size = .zero
+                            })
+                    )
+                    .offset(y:self.size.height > 1 ? -150 : -80)
+
+                ZStack{
                         Color.red
                         VStack(spacing: 5){
                             HStack{
-                               
+
                                 Text("Rainy")
                                 .fontWeight(.bold)
                                 .font(.title)
@@ -72,16 +86,15 @@ struct Cards:View {
                             Spacer()
                         }
 
-                }.frame(width: reader.size.width - 74 , height: 200)
+                }
+                .frame(width: reader.size.width - 74 , height: 200)
                 .cornerRadius(20)
                 .shadow(radius: 20)
                     .gesture(DragGesture().onChanged({ (value) in
                         self.size = value.translation
-                        self.backViewSize = 50
                     })
                         .onEnded({ (value) in
                             self.size = .zero
-                            self.backViewSize = 80
                         })
                 )
                     .offset(self.size)
