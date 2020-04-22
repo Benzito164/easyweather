@@ -154,14 +154,14 @@ struct Cards:View {
                 )
                     .offset(self.size)
             }
-            .animation(.spring())
+     .animation(.spring())
         }
-//        .animation(.easeIn(duration: 0.4))
+       .animation(.easeIn(duration: 0.4))
     }
 }
-
-struct Cards_Previews: PreviewProvider {
-    static var previews: some View {
-        Cards()
-    }
-}
+    
+//    struct Cards_Previews: PreviewProvider {
+//        static var previews: some View {
+//            Cards()
+//        }
+//}
