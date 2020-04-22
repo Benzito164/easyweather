@@ -22,14 +22,32 @@ struct Cards:View {
                     Color.blue
                     VStack(spacing: 5){
                         HStack{
-                            Text("Rainy")
+                            Image("summer")
+                            .scaledToFit()
+                            .padding(.horizontal,-100)
+                            VStack{
+                                Text("10°C")
+                                .fontWeight(.bold)
+                                .font(.title)
+                                .foregroundColor(.white)
+                                Text("Liverpool")
+                                .fontWeight(.bold)
+                                .font(.title)
+                                .foregroundColor(.white)
+                                Text("Sunny")
+                                .fontWeight(.bold)
+                                .font(.subheadline)
+                                .foregroundColor(.white)
+                            }
+                        }
+                        Text("It will be a dry night across the region but with a brisk breeze at times. The skies will be clear to start with a little cloud building overnight")
                             .fontWeight(.bold)
-                            .font(.title)
+                            .font(.subheadline)
                             .foregroundColor(.white)
-                            Spacer()
-                            Spacer()
-                        }.padding()
-                        Spacer()
+                            .lineLimit(nil)
+                            .multilineTextAlignment(.center)
+                            .padding(.leading, 9)
+                            .padding(.trailing,10)
                     }
 
                 }.frame(width: reader.size.width - self.backViewSize - 10, height: 200)
@@ -47,17 +65,36 @@ struct Cards:View {
                 ZStack{
                     Color.orange
                     VStack(spacing: 5){
-                        HStack{
-                            Text("Rainy")
+                            HStack{
+                                Image("wet")
+                                .scaledToFit()
+                                .padding(.horizontal,-100)
+                                VStack{
+                                    Text("0°C")
+                                    .fontWeight(.bold)
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    Text("London")
+                                    .fontWeight(.bold)
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    Text("Wet")
+                                    .fontWeight(.bold)
+                                    .font(.subheadline)
+                                    .foregroundColor(.white)
+                                }
+                            }
+                            Divider()
+                        Text("It will be a dry night across the region but with a brisk breeze at times. The skies will be clear to start with a little cloud building overnight ")
                             .fontWeight(.bold)
-                            .font(.title)
+                            .font(.subheadline)
                             .foregroundColor(.white)
-                            Spacer()
-                            Spacer()
-                        }.padding()
-                        Spacer()
-                    }
-
+                            .lineLimit(nil)
+                            .multilineTextAlignment(.center)
+                            .padding(.leading, 9)
+                            .padding(.trailing,10)
+                           
+                        }
                 }
                 .frame(width: reader.size.width - self.backViewSize, height: 200)
                 .cornerRadius(20)
@@ -75,15 +112,33 @@ struct Cards:View {
                         Color.red
                         VStack(spacing: 5){
                             HStack{
-
-                                Text("Rainy")
+                                Image("winter")
+                                    .scaledToFit()
+                                    .padding(.horizontal,-100)
+                                VStack{
+                                    Text("4°C")
+                                        .fontWeight(.bold)
+                                        .font(.title)
+                                        .foregroundColor(.white)
+                                    Text("Exeter")
+                                        .fontWeight(.bold)
+                                        .font(.title)
+                                        .foregroundColor(.white)
+                                    Text("Snowy")
+                                        .fontWeight(.bold)
+                                        .font(.subheadline)
+                                        .foregroundColor(.white)
+                                }
+                            }
+                            Divider()
+                            Text("It will be a dry night across the region but with a brisk breeze at times. The skies will be clear to start with a little cloud building overnight")
                                 .fontWeight(.bold)
-                                .font(.title)
+                                .font(.subheadline)
                                 .foregroundColor(.white)
-                                Spacer()
-                                Spacer()
-                            }.padding()
-                            Spacer()
+                                .lineLimit(nil)
+                                .multilineTextAlignment(.center)
+                                .padding(.leading, 9)
+                                .padding(.trailing,10)
                         }
 
                 }
