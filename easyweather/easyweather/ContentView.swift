@@ -16,9 +16,8 @@ struct ContentView: View {
                                 Spacer().frame(height:0)
                                 VStack(spacing:1){
                                     TopSearchBar()
-                                     CircleLoadingAnimation()
+                                    LabelShimmer()
                                      Cards()
-                                     Spacer()
                                      Spacer()
                                      Spacer()
                                 }

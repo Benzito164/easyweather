@@ -26,8 +26,9 @@ struct LocationDetail: View {
                 }){
                         Image("add")
                         .foregroundColor(.black)
+                        .scaledToFit()
                 }.padding()
-                //.buttonStyle(GradientButtonStyle())
+                .buttonStyle(GradientButtonStyle())
                 Spacer()
 
             }
@@ -74,9 +75,9 @@ struct CardShimmer : View {
         .padding(.horizontal)
         .padding(.top)
         .onAppear {
-            
+
             withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: false)){
-                
+
                 self.show.toggle()
             }
         }
@@ -91,6 +92,7 @@ struct GradientButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 3: 1).animation(.easeIn(duration:0.8))
     }
 }
+
 struct CPreviews: PreviewProvider {
     static var previews: some View {
           LocationDetail()

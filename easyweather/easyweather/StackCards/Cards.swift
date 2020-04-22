@@ -14,6 +14,8 @@ struct Cards:View {
     @State var backViewSize : CGFloat = 80
     @State var size : CGSize = .zero
     @State var secoundCardSize : CGSize = .zero
+    @State var show = false
+    var center = (UIScreen.main.bounds.width / 2) + 110
     
     fileprivate func secoundCard(currentReader : GeometryProxy) -> some View {
         return ZStack{
@@ -142,7 +144,24 @@ struct Cards:View {
                     .padding(.leading, 9)
                     .padding(.trailing,10)
             }
+            Color.black.opacity(0.09)
+            .frame(height: 200)
+            .cornerRadius(10)
             
+            Color.white
+            .frame(height: 200)
+            .cornerRadius(10)
+            .mask(
+            
+                Rectangle()
+                .fill(
+                
+                    LinearGradient(gradient: .init(colors: [.clear,Color.white.opacity(0.48),.clear]), startPoint: .top, endPoint: .bottom)
+                )
+                .rotationEffect(.init(degrees: 70))
+                .offset(x: self.show ? center : -center)
+            
+            )
         }
         .frame(width: currentReader.size.width - 74 , height: 200)
             
@@ -159,25 +178,70 @@ struct Cards:View {
     }
     
     var body: some View {
+           
         GeometryReader{reader in
-            
+                
             ZStack{
+                
                 self.thirdCard(currentReader: reader)
                 
                 self.secoundCard(currentReader: reader)
                 
                 self.firstCard(currentReader: reader)
             }
-     .animation(.spring())
+                .animation(.spring())
+                
+            
         }
-       .animation(
-        .easeIn(duration: 0.4)
-        )
+        .onAppear{
+        withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: true)){
+            self.show.toggle()
+        }
+        }
+
     }
 }
+
+struct LabelShimmer : View {
     
-//    struct Cards_Previews: PreviewProvider {
-//        static var previews: some View {
-//            Cards()
-//        }
-//}
+    @State var show = false
+    var center = (UIScreen.main.bounds.width / 2) + 110
+    
+    var body : some View{
+        
+        ZStack{
+            
+//            Color.black.opacity(0.09)
+//            //.frame(height: 100)
+//            .frame(width: 310, height: 100)
+//            .cornerRadius(10)
+            Text("Swipe down on cards \n       to reveal more!")
+                .foregroundColor(Color.blue.opacity(0.9))
+                .font(.system(size: 20))
+            Color.white
+            //.frame(height: 200)
+                .frame(width: 310, height: 100)
+            .cornerRadius(10)
+            .mask(
+            
+                Rectangle()
+                .fill(
+                
+                    LinearGradient(gradient: .init(colors: [.clear,Color.white.opacity(0.48),.clear]), startPoint: .top, endPoint: .bottom)
+                )
+                .rotationEffect(.init(degrees: 70))
+                .offset(x: self.show ? center : -center)
+            
+            )
+        }
+        .padding(.horizontal)
+        .padding(.top)
+        .onAppear {
+
+            withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: false)){
+
+                self.show.toggle()
+            }
+        }
+    }
+}
