@@ -155,8 +155,7 @@ struct Cards:View {
                     .offset(self.size)
             }
             
-        }
-        .animation(.spring())
+        }.animation(.spring())
     }
 }
 
