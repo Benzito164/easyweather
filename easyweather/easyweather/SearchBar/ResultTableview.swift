@@ -47,7 +47,7 @@ struct tableView : View {
     func generateRandomArrayFromSingleParameter (string:String)->[String]{
         var emptyArray: [String] = []
         for value in 1...4 {
-            emptyArray.append(string+String(6))
+            emptyArray.append(string+String(value))
         }
     return emptyArray
 }
