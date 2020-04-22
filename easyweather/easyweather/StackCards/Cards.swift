@@ -23,8 +23,8 @@ struct Cards:View {
             VStack(spacing: 5){
                 HStack{
                     Image("wet")
-                        .scaledToFit()
-                        .padding(.horizontal,-100)
+                       .scaledToFit()
+                        .padding(.horizontal,-50)
                     VStack{
                         Text("0°C")
                             .fontWeight(.bold)
@@ -72,7 +72,7 @@ struct Cards:View {
                 HStack{
                     Image("summer")
                         .scaledToFit()
-                        .padding(.horizontal,-100)
+                        .padding(.horizontal,-50)
                     VStack{
                         Text("10°C")
                             .fontWeight(.bold)
@@ -117,8 +117,8 @@ struct Cards:View {
             VStack(spacing: 5){
                 HStack{
                     Image("winter")
-                        .scaledToFit()
-                        .padding(.horizontal,-100)
+                        //.scaledToFit()
+                        .padding(.horizontal,-50)
                     VStack{
                         Text("4°C")
                             .fontWeight(.bold)
@@ -243,5 +243,11 @@ struct LabelShimmer : View {
                 self.show.toggle()
             }
         }
+    }
+}
+
+struct Cards_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

@@ -26,7 +26,7 @@ struct LocationDetail: View {
                 }){
                         Image("add")
                         .foregroundColor(.black)
-                        .scaledToFit()
+                       // .scaledToFit()
                 }.padding()
                 .buttonStyle(GradientButtonStyle())
                 Spacer()
