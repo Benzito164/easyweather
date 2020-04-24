@@ -10,27 +10,37 @@ import SwiftUI
 
 
 struct ContentView: View {
+    @State var displayLabel = true
+    @State private var timer = Timer.publish(every: 5.0, on: .main, in: RunLoop.Mode.common).autoconnect()
     var body: some View {
-                        NavigationView{
-                            VStack{
-                                Spacer().frame(height:0)
-                                VStack(spacing:1){
-                                    TopSearchBar()
-                                    LabelShimmer()
-                                     Cards()
-                                     Spacer()
-                                     Spacer()
-                                }
-                            }
-                            .navigationBarTitle("Weather")
-                        .navigationBarHidden(true)
-                        }.preferredColorScheme(.light)
+        NavigationView{
+            VStack{
+                Spacer().frame(height:0)
+                VStack(spacing:1){
+                    TopSearchBar()
+                    if displayLabel {
+                        LabelShimmer()
+                    }
+                    Cards()
+                    Spacer()
+                    Spacer()
+                }
+            }
+            .onReceive(timer) { value in
+                withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: true)){
+                    self.displayLabel.toggle()
+                    self.timer.upstream.connect().cancel()
+                }
+            }
+            .navigationBarTitle("Weather")
+            .navigationBarHidden(true)
+        }.preferredColorScheme(.light)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-          ContentView()
+        ContentView()
     }
 }
 
@@ -38,8 +48,8 @@ struct ContentView_Previews: PreviewProvider {
 
 class Host: UIHostingController<ContentView> {
     
-     var  prefferedStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    var  prefferedStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
     }
 }
 
