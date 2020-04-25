@@ -22,6 +22,8 @@ struct LocationDetail: View {
                     self.showAnimation.toggle()
                 }){
                     loadImageFromResource(imageName:"add.png")
+                    .resizable()
+                    .frame(width: 40, height: 40)
                         .foregroundColor(.black)
                     }.padding()
                     .buttonStyle(GradientButtonStyle())

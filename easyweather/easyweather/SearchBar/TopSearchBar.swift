@@ -30,7 +30,8 @@ struct TopSearchBar : View {
                     if self.show {
                         VStack{
                             HStack{
-                                loadImageFromResource(imageName: "search")
+                                loadImageFromResource(imageName: "search.png")
+                                .foregroundColor(Color.purple)
                                 .scaledToFit()
                                 .padding(.horizontal,8)
 
@@ -61,7 +62,6 @@ struct TopSearchBar : View {
                          }){
                              Image("search")
                                 .scaledToFit()
-                                //.foregroundColor(.white)
                                 .padding(10)
                          }
                         
@@ -79,5 +79,11 @@ struct TopSearchBar : View {
           //  Spacer()
         }
         .edgesIgnoringSafeArea(.top)
+    }
+}
+
+struct TopSearchBar_Previews: PreviewProvider {
+    static var previews: some View {
+        TopSearchBar().previewDevice(PreviewDevice.init(rawValue: "iPhone SE"))
     }
 }
