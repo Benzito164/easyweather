@@ -114,7 +114,7 @@ struct Cards:View {
                     self.size = .zero
                 })
         )
-            .offset(y:self.size.height > 1 ? -370 : -160)
+            .offset(y:self.size.height > 1 ? -(self.size.height+250) : -160)
     }
     
     fileprivate func firstCard(currentReader: GeometryProxy) -> some View {
