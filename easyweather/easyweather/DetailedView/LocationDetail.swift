@@ -101,7 +101,7 @@ struct CardShimmer : View {
         .padding(.top)
         .onAppear {
             
-            withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: false)){
+            withAnimation(Animation.default.speed(0.1).delay(0).repeatForever(autoreverses: false)){
                 
                 self.show.toggle()
             }

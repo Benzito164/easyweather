@@ -44,7 +44,7 @@ struct TopSearchBar : View {
                                     }
                                   
                                 }){
-                                    Image(systemName: "xmark").foregroundColor(.black)
+                                    Image(systemName: "xmark").foregroundColor(.purple)
                                 }
                                 .padding(.horizontal,8)
                             }.padding()
@@ -60,7 +60,8 @@ struct TopSearchBar : View {
                                 
                             }
                          }){
-                             Image("search")
+                            loadImageFromResource(imageName: "search.png")
+                                .foregroundColor(Color.purple)
                                 .scaledToFit()
                                 .padding(10)
                          }
