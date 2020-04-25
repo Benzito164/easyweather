@@ -30,7 +30,7 @@ struct TopSearchBar : View {
                     if self.show {
                         VStack{
                             HStack{
-                                Image("search")
+                                loadImageFromResource(imageName: "search")
                                 .scaledToFit()
                                 .padding(.horizontal,8)
 
