@@ -11,14 +11,16 @@ import SwiftUI
 
 struct ContentView: View {
     @State var displayLabel = true
+    @State var spacingAfterTextIsHidden:Int = 0
     @State private var timer = Timer.publish(every: 5.0, on: .main, in: RunLoop.Mode.common).autoconnect()
     var body: some View {
         NavigationView{
             VStack{
                 Spacer().frame(height:0)
-                VStack(spacing:1){
-                    TopSearchBar()
+                VStack(spacing:-22){
+                    TopSearchBar().padding(.bottom, 70)
                     if displayLabel {
+                      //  Spacer().frame(height:CGFloat(spacingAfterTextIsHidden))
                         LabelShimmer()
                     }
                     Cards()
@@ -30,6 +32,7 @@ struct ContentView: View {
                 withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: true)){
                     self.displayLabel.toggle()
                     self.timer.upstream.connect().cancel()
+                //    self.spacingAfterTextIsHidden = 100
                 }
             }
             .navigationBarTitle("Weather")
