@@ -22,7 +22,7 @@ struct Cards:View {
             Color.orange
             VStack(spacing: 5){
                 HStack{
-                    Image("wet")
+                    loadImageFromResource(imageName: "wet.png")
                         .resizable()
                         .frame(width: 70, height: 70)
                         .padding()
