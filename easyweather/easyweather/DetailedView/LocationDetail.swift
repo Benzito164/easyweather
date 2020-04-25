@@ -21,7 +21,7 @@ struct LocationDetail: View {
                 Button(action: {
                     self.showAnimation.toggle()
                 }){
-                    loadImageFromResource(imageName: "add.png")
+                    loadImageFromResource(imageName:"add.png")
                         .foregroundColor(.black)
                     }.padding()
                     .buttonStyle(GradientButtonStyle())
@@ -30,7 +30,6 @@ struct LocationDetail: View {
             }
             
             ScrollView(.vertical, showsIndicators: false) {
-                
                 ForEach(weatherSymbols,id: \.self){ symbol in
                     CardShimmer(weatherSymbol: symbol)
                 }

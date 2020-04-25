@@ -71,7 +71,7 @@ struct Cards:View {
             Color.blue
             VStack(spacing: 5){
                 HStack{
-                    Image("summer")
+                    loadImageFromResource(imageName: "summer.png")
                     .resizable()
                     .frame(width: 70, height: 70)
                     .padding()
@@ -118,7 +118,7 @@ struct Cards:View {
             Color.red
             VStack(spacing: 5){
                 HStack{
-                    Image("winter")
+                    loadImageFromResource(imageName: "winter.png")
                         .resizable()
                         .frame(width: 70, height: 70)
                         .padding()
