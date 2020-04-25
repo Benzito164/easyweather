@@ -12,7 +12,7 @@ struct LocationDetail: View {
     @State var searchedLocation:String = "Unkown Location"
     @State private var showDetail = false
     @State private var showAnimation = false
-    var weatherSymbols = ["summer","winter","wet","stormy"]
+    var weatherSymbols = ["summer.png","winter.png","wet.png","stormy.png"]
     var body: some View {
         VStack{
             
@@ -21,9 +21,9 @@ struct LocationDetail: View {
                 Button(action: {
                     self.showAnimation.toggle()
                 }){
-                    Image("add")
+                    loadImageFromResource(imageName: "add.png")
                         .foregroundColor(.black)
-                }.padding()
+                    }.padding()
                     .buttonStyle(GradientButtonStyle())
                 Spacer()
                 
@@ -54,7 +54,7 @@ struct CardShimmer : View {
                     VStack{
                         Spacer()
                         Spacer()
-                        Image(weatherSymbol)
+                        loadImageFromResource(imageName: weatherSymbol)
                             .resizable()
                             .frame(width: 70, height: 70, alignment: .topTrailing)
                     }

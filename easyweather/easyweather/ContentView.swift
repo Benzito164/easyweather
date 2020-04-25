@@ -24,8 +24,17 @@ struct ContentView: View {
                     }
                     Cards()
                     Spacer()
-                    Spacer()
                 }
+                Button(action: {
+                    //  self.showAnimation.toggle()
+                }){
+                    loadImageFromResource(imageName:"infoIcon.png")
+                        .renderingMode(Image.TemplateRenderingMode.original)
+                        .resizable()
+                        .buttonStyle(GradientButtonStyle())
+                        .frame(width: 40, height: 40)
+                }
+                
             }
             .onReceive(timer) { value in
                 withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: true)){
@@ -53,7 +62,10 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
+//TODO: This is a helper method it should be extracted to a seperate class
+func loadImageFromResource(imageName:String) -> Image {
+    return Image(uiImage: UIImage(imageLiteralResourceName: imageName))
+}
 
 class Host: UIHostingController<ContentView> {
     
