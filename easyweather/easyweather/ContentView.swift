@@ -20,7 +20,6 @@ struct ContentView: View {
                 VStack(spacing:-22){
                     TopSearchBar().padding(.bottom, 70)
                     if displayLabel {
-                      //  Spacer().frame(height:CGFloat(spacingAfterTextIsHidden))
                         LabelShimmer()
                     }
                     Cards()
@@ -32,7 +31,6 @@ struct ContentView: View {
                 withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: true)){
                     self.displayLabel.toggle()
                     self.timer.upstream.connect().cancel()
-                //    self.spacingAfterTextIsHidden = 100
                 }
             }
             .navigationBarTitle("Weather")
@@ -43,7 +41,15 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+       Group {
+                  ContentView()
+                     .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+                     .previewDisplayName("iPhone SE")
+
+                  ContentView()
+                     .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
+                     .previewDisplayName("iPhone 11 Pro Max")
+               }
     }
 }
 

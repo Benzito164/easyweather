@@ -22,12 +22,10 @@ struct Cards:View {
             Color.orange
             VStack(spacing: 5){
                 HStack{
-                    Image("icons8-gears-80")
+                    Image("wet")
                         .resizable()
                         .frame(width: 70, height: 70)
                         .padding()
-//                       .scaledToFit()
-//                        .padding(.horizontal,-50)
                     VStack{
                         Text("0°C")
                             .fontWeight(.bold)
@@ -65,7 +63,7 @@ struct Cards:View {
                 self.size = .zero
             })
         )
-            .offset(y:self.size.height > 1 ? -150 : -80)
+            .offset(y:self.size.height > 1 ? -120 : -80)
     }
     
     fileprivate func thirdCard(currentReader : GeometryProxy) -> some View {
@@ -77,8 +75,6 @@ struct Cards:View {
                     .resizable()
                     .frame(width: 70, height: 70)
                     .padding()
-//                        .scaledToFit()
-//                        .padding(.horizontal,-50)
                     VStack{
                         Text("10°C")
                             .fontWeight(.bold)
@@ -126,7 +122,6 @@ struct Cards:View {
                         .resizable()
                         .frame(width: 70, height: 70)
                         .padding()
-                        //.padding(.horizontal,-50)
                     VStack{
                         Text("4°C")
                             .fontWeight(.bold)
@@ -218,16 +213,10 @@ struct LabelShimmer : View {
     var body : some View{
         
         ZStack{
-            
-//            Color.black.opacity(0.09)
-//            //.frame(height: 100)
-//            .frame(width: 310, height: 100)
-//            .cornerRadius(10)
             Text("Swipe down on cards \n       to reveal more!")
                 .foregroundColor(Color.blue.opacity(0.9))
                 .font(.system(size: 20))
             Color.white
-            //.frame(height: 200)
                 .frame(width: 310, height: 100)
             .cornerRadius(10)
             .mask(
