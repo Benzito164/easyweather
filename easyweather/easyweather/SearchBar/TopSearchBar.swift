@@ -32,7 +32,7 @@ struct TopSearchBar : View {
                             HStack{
                                 loadImageFromResource(imageName: "search.png")
                                 .resizable()
-                                .frame(width: 20, height: 20)
+                                .frame(width: 16, height: 16)
                                 .foregroundColor(Color.purple)
                                 .scaledToFit()
                                 .padding(.horizontal,8)
