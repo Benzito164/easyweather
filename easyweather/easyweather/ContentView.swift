@@ -17,16 +17,22 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 Spacer().frame(height:0)
-                VStack(spacing:-22){
-                    TopSearchBar().padding(.bottom, 70)
+                VStack(spacing:-29){
+                    TopSearchBar().padding(.bottom, 10)
                     if displayLabel {
+                        LabelShimmer().padding(.bottom,60)
+                    } else
+                    {
                         LabelShimmer()
+                            .padding(.bottom,1)
+                            .hidden()
                     }
+                     
                     Cards()
                     Spacer()
                 }
                 Button(action: {
-                    //  self.showAnimation.toggle()
+
                 }){
                     loadImageFromResource(imageName:"infoIcon.png")
                         .renderingMode(Image.TemplateRenderingMode.original)
@@ -37,7 +43,7 @@ struct ContentView: View {
                 
             }
             .onReceive(timer) { value in
-                withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: true)){
+                withAnimation(Animation.default.speed(0.15).delay(0)){
                     self.displayLabel.toggle()
                     self.timer.upstream.connect().cancel()
                 }
