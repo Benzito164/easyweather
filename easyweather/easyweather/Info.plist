@@ -56,5 +56,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>GitShaHash</key>
+	<string></string>
+	<key>GitState</key>
+	<string></string>
 </dict>
 </plist>
