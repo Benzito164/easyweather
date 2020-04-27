@@ -56,7 +56,8 @@ struct DebugView:View {
             Text ("Device: \(UIDevice.modelName)")
                 .foregroundColor(.purple)
             Text ("iOS Version: \(UIDevice.current.systemVersion)") .foregroundColor(.purple)
-            Text ("Git Commit: \(InfoPlistParser.getStringValue(forKey: "GitShaHash"))").foregroundColor(.purple)
+           // InfoPlistParser.getStringValue(forKey: "GitShaHash").prefix(7)
+            Text ("Git Commit:\(InfoPlistParser.getStringValue(forKey: "GitShaHash"))").foregroundColor(.purple)
           
         }//.background(Color.white)
        
@@ -140,6 +141,6 @@ struct InfoPlistParser {
         guard let value = Bundle.main.infoDictionary?[key] as? String else {
             fatalError("error")
         }
-        return value
+        return String(value.prefix(7))
     }
 }
