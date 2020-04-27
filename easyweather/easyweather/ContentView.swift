@@ -12,6 +12,7 @@ import SwiftUI
 struct ContentView: View {
     @State var displayLabel = true
     @State var spacingAfterTextIsHidden:Int = 0
+    @State var showDebugScreen = false
     @State private var timer = Timer.publish(every: 5.0, on: .main, in: RunLoop.Mode.common).autoconnect()
     var body: some View {
         NavigationView{
@@ -34,15 +35,16 @@ struct ContentView: View {
                     Spacer()
                 }
                 Button(action: {
-
+                    self.showDebugScreen.toggle()
                 }){
                     loadImageFromResource(imageName:"infoIcon.png")
                         .renderingMode(Image.TemplateRenderingMode.original)
                         .resizable()
                         .buttonStyle(GradientButtonStyle())
                         .frame(width: 40, height: 40)
+                }.sheet(isPresented: $showDebugScreen){
+                    DebugScreenView()
                 }
-                
             }
             .onReceive(timer) { value in
                 withAnimation(Animation.default.speed(0.15).delay(0)){
