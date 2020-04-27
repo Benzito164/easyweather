@@ -56,10 +56,10 @@ struct DebugView:View {
             Text ("Device: \(UIDevice.modelName)")
                 .foregroundColor(.purple)
             Text ("iOS Version: \(UIDevice.current.systemVersion)") .foregroundColor(.purple)
-           // InfoPlistParser.getStringValue(forKey: "GitShaHash").prefix(7)
-            Text ("Git Commit:\(InfoPlistParser.getStringValue(forKey: "GitShaHash"))").foregroundColor(.purple)
+           
+            Text ("Git Commit: \(InfoPlistParser.getStringValue(forKey: "GitShaHash"))").foregroundColor(.purple)
           
-        }//.background(Color.white)
+        }
        
     }
 }
