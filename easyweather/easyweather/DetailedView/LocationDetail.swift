@@ -14,8 +14,7 @@ struct LocationDetail: View {
     @State private var showAnimation = false
     var weatherSymbols = ["summer.png","winter.png","wet.png","stormyweather.png"]
     var body: some View {
-        VStack{
-            
+        VStack(){
             HStack{
                 Spacer()
                 Button(action: {
@@ -38,7 +37,6 @@ struct LocationDetail: View {
             }
         }
         .navigationBarTitle(searchedLocation)
-        
     }
 }
 
@@ -67,7 +65,7 @@ struct CardShimmer : View {
                     }
                     Text("14°C").fontWeight(.bold).foregroundColor(.purple).font(.largeTitle)
                 }
-                Divider().frame(width: 350, height: 4).background(Color.purple)
+                Divider().frame(width: 350, height: 4).background(Color.purple).cornerRadius(5)
                 Text("It will be a dry night across the region but with a brisk breeze at times. The skies will be clear to start with a little cloud building overnight ")
                     .fontWeight(.bold)
                     .font(.subheadline)

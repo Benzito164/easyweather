@@ -24,9 +24,11 @@ struct ContentView: View {
                     } else
                     {
                         LabelShimmer()
-                            .padding(.bottom,1)
                             .hidden()
+                           .padding(.bottom,1)
+                        
                     }
+                    
                      
                     Cards()
                     Spacer()
@@ -50,7 +52,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Weather")
             .navigationBarHidden(true)
-        }.preferredColorScheme(.light)
+        }.preferredColorScheme(.dark)
     }
 }
 
