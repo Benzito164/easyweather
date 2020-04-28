@@ -13,6 +13,7 @@ import SwiftUI
 struct TopSearchBar : View {
      @State var show = false
      @State var text = ""
+    @State var showSettingsScreen = false
     
     var body: some View {
         VStack(spacing:20){
@@ -75,6 +76,18 @@ struct TopSearchBar : View {
                 .padding(self.show ? 10 : 0)
                 .background(Color.white)
                 .cornerRadius(20)
+                Button(action: {
+                    self.showSettingsScreen.toggle()
+                }){
+                    loadImageFromResource(imageName:"SettingsIcon.png")
+                        //.renderingMode(Image.TemplateRenderingMode.original)
+                        .resizable()
+                        .buttonStyle(GradientButtonStyle())
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.purple)
+                }.sheet(isPresented: $showSettingsScreen){
+                    MainSettingsScreen()
+                }
             
             }
             .padding(.top,(UIApplication.shared.windows.first?.safeAreaInsets.top)!+15)
@@ -82,6 +95,7 @@ struct TopSearchBar : View {
             .padding(.bottom,10)
             //.background(Color.orange)
           //  Spacer()
+            
         }
         .edgesIgnoringSafeArea(.top)
     }

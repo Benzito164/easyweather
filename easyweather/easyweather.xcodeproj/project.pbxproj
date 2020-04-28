@@ -30,6 +30,8 @@
 		B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC44024492F89001021F6 /* TopSearchBar.swift */; };
 		B1BFC44424493845001021F6 /* CircleLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFC44324493845001021F6 /* CircleLoadingAnimation.swift */; };
 		B1CF563A2456FDA40059B48E /* DebugScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CF56392456FDA40059B48E /* DebugScreenView.swift */; };
+		B1D194CA2458D211008E7E44 /* SettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D194C92458D211008E7E44 /* SettingsIcon.png */; };
+		B1D194CD2458D2D4008E7E44 /* MainSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D194CC2458D2D4008E7E44 /* MainSettingsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		B1BFC44024492F89001021F6 /* TopSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchBar.swift; sourceTree = "<group>"; };
 		B1BFC44324493845001021F6 /* CircleLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoadingAnimation.swift; sourceTree = "<group>"; };
 		B1CF56392456FDA40059B48E /* DebugScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugScreenView.swift; sourceTree = "<group>"; };
+		B1D194C92458D211008E7E44 /* SettingsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsIcon.png; sourceTree = "<group>"; };
+		B1D194CC2458D2D4008E7E44 /* MainSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsScreen.swift; sourceTree = "<group>"; };
 		EB1E4F495328563022A5C93C /* Pods-easyweather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyweather.release.xcconfig"; path = "Target Support Files/Pods-easyweather/Pods-easyweather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,7 @@
 		B12DB4502447A71E00FC9A52 /* easyweather */ = {
 			isa = PBXGroup;
 			children = (
+				B1D194CB2458D2B8008E7E44 /* SettingsView */,
 				B1CF56382456FD810059B48E /* DebugInfo */,
 				B146399D245482D8000B4EC5 /* ImageResources */,
 				B1872ACF244E56D800A5B199 /* Assets.xcassets */,
@@ -124,6 +129,7 @@
 		B146399D245482D8000B4EC5 /* ImageResources */ = {
 			isa = PBXGroup;
 			children = (
+				B1D194C92458D211008E7E44 /* SettingsIcon.png */,
 				B14639AE24549B63000B4EC5 /* search.png */,
 				B14639A624549082000B4EC5 /* cloudy.png */,
 				B14639A224549081000B4EC5 /* stormyweather.png */,
@@ -176,6 +182,14 @@
 				B1CF56392456FDA40059B48E /* DebugScreenView.swift */,
 			);
 			path = DebugInfo;
+			sourceTree = "<group>";
+		};
+		B1D194CB2458D2B8008E7E44 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				B1D194CC2458D2D4008E7E44 /* MainSettingsScreen.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		BD1443F66528144F869ED9F2 /* Frameworks */ = {
@@ -263,6 +277,7 @@
 				B12DB45E2447A71F00FC9A52 /* LaunchScreen.storyboard in Resources */,
 				B14639AD24549082000B4EC5 /* wet.png in Resources */,
 				B14639AC24549082000B4EC5 /* cloudy.png in Resources */,
+				B1D194CA2458D211008E7E44 /* SettingsIcon.png in Resources */,
 				B18C5ED92449BEDF0031214F /* GoogleService-Info.plist in Resources */,
 				B146399F24548537000B4EC5 /* infoIcon.png in Resources */,
 				B14639AB24549082000B4EC5 /* winter.png in Resources */,
@@ -345,6 +360,7 @@
 				B12DB4522447A71E00FC9A52 /* AppDelegate.swift in Sources */,
 				B1CF563A2456FDA40059B48E /* DebugScreenView.swift in Sources */,
 				B124F5F6244A51FA0061EF65 /* ResultTableview.swift in Sources */,
+				B1D194CD2458D2D4008E7E44 /* MainSettingsScreen.swift in Sources */,
 				B12DB4542447A71E00FC9A52 /* SceneDelegate.swift in Sources */,
 				B173650A244B8B3800246AD5 /* LocationDetail.swift in Sources */,
 				B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */,

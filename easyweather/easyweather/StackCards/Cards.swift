@@ -214,7 +214,7 @@ struct LabelShimmer : View {
         
         ZStack{
             Text("Swipe down on cards \n       to reveal more!")
-                .foregroundColor(Color.blue.opacity(0.9))
+                .foregroundColor(Color.purple.opacity(0.9))
                 .font(.system(size: 20))
             Color.white
                 .frame(width: 310, height: 100)
