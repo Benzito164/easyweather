@@ -12,7 +12,7 @@ struct LocationDetail: View {
     @State var searchedLocation:String = "Unkown Location"
     @State private var showDetail = false
     @State private var showAnimation = false
-    var weatherSymbols = ["summer.png","winter.png","wet.png","stormyweather.png"]
+    var weatherSymbols = ["summer.png","winter.png","wet.png","stormyweather.png","stormyweather.png","stormyweather.png"]
     var body: some View {
         VStack(){
             HStack{
