@@ -43,7 +43,7 @@ struct TopSearchBar : View {
                                     withAnimation {
                     
                                          self.show.toggle()
-                                       //  self.text = ""
+                                         self.text = ""
                                     }
                                   
                                 }){
@@ -74,7 +74,6 @@ struct TopSearchBar : View {
                     }
                 }
                 .padding(self.show ? 10 : 0)
-                .background(Color.white)
                 .cornerRadius(20)
                 Button(action: {
                     self.showSettingsScreen.toggle()
@@ -93,9 +92,6 @@ struct TopSearchBar : View {
             .padding(.top,(UIApplication.shared.windows.first?.safeAreaInsets.top)!+15)
             .padding(.horizontal)
             .padding(.bottom,10)
-            //.background(Color.orange)
-          //  Spacer()
-            
         }
         .edgesIgnoringSafeArea(.top)
     }
