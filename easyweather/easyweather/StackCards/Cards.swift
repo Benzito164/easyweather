@@ -100,7 +100,7 @@ struct Cards:View {
                     .padding(.trailing,10)
             }
             
-        }.frame(width: currentReader.size.width - self.backViewSize - 10, height: 200)
+        }.frame(width: currentReader.size.width - self.backViewSize - 1, height: 200)
             .cornerRadius(20)
             .shadow(radius: 20)
             .gesture(DragGesture().onChanged({ (value) in
