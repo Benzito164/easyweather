@@ -10,8 +10,7 @@ import SwiftUI
 
 struct MainSettingsScreen: View {
     var body: some View {
-            Settings()
-        
+             Settings()
     }
 }
 
@@ -28,7 +27,7 @@ struct Settings: View {
         VStack{
             ZStack{
 
-                    
+
                 HStack{
                     VStack(alignment: .leading, spacing: 45, content: {
                         Text("Settings")
@@ -37,7 +36,7 @@ struct Settings: View {
                             .fontWeight(.bold)
                     })
                         Spacer()
-                    
+
                 }.padding()
                 .padding(.top, 10)
                 
