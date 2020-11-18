@@ -7,5 +7,7 @@ target 'easyweather' do
 
   # Pods for easyweather
 pod 'Firebase/Analytics'
+pod 'SDWebImageSwiftUI'
 pod 'FirebaseCore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'master'
+ pod 'GooglePlaces', '3.3.0'
 end

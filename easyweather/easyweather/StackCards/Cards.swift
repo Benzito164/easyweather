@@ -15,6 +15,7 @@ struct Cards:View {
     @State var size : CGSize = .zero
     @State var secoundCardSize : CGSize = .zero
     @State var show = false
+    @State var showLocationDetailFromStackedCards = false
     var center = (UIScreen.main.bounds.width / 2) + 110
     
     fileprivate func secoundCard(currentReader : GeometryProxy) -> some View {
