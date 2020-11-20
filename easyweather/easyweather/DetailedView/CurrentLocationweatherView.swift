@@ -36,8 +36,8 @@ struct CurrentLocationweatherView: View {
                     }
                     
                     
-                  //  loadImageFromResource(imageName: weatherInformation.count > 1 ? weatherInformation[0].weather[0].icon :"winter.png")
-                        WebImage(url:URL(string: weatherInformation[0].weather[0].icon))
+                    loadImageFromResource(imageName: weatherInformation.count > 1 ? weatherInformation[0].weather[0].icon :"winter.png")
+                       // WebImage(url:URL(string: weatherInformation[0].weather[0].icon))
                         .resizable()
                         .frame(width: 100, height: 100, alignment: .top)
                     Text("Clear Sky")

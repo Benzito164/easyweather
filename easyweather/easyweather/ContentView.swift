@@ -62,13 +62,13 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
        Group {
                   ContentView()
-                     .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
-                     .previewDisplayName("iPhone SE")
+                     .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+                     .previewDisplayName("iPhone 12")
 
-                  ContentView()
-                     .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
-                     .previewDisplayName("iPhone 11 Pro Max")
-               }
+//                  ContentView()
+//                     .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
+//                     .previewDisplayName("iPhone 11 Pro Max")
+              }
     }
 }
 
