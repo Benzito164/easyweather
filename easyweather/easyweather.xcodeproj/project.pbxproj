@@ -11,8 +11,6 @@
 		B10187822565E0D200228A88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10187802565E0D200228A88 /* AppDelegate.swift */; };
 		B10187832565E0D200228A88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10187812565E0D200228A88 /* SceneDelegate.swift */; };
 		B124F5F6244A51FA0061EF65 /* ResultTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B124F5F5244A51FA0061EF65 /* ResultTableview.swift */; };
-		B12DB4522447A71E00FC9A52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4512447A71E00FC9A52 /* AppDelegate.swift */; };
-		B12DB4542447A71E00FC9A52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */; };
 		B12DB4562447A71E00FC9A52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DB4552447A71E00FC9A52 /* ContentView.swift */; };
 		B12DB45B2447A71F00FC9A52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12DB45A2447A71F00FC9A52 /* Preview Assets.xcassets */; };
 		B12DB45E2447A71F00FC9A52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12DB45C2447A71F00FC9A52 /* LaunchScreen.storyboard */; };
@@ -48,8 +46,6 @@
 		B10187812565E0D200228A88 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B124F5F5244A51FA0061EF65 /* ResultTableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableview.swift; sourceTree = "<group>"; };
 		B12DB44E2447A71E00FC9A52 /* easyweather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easyweather.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B12DB4512447A71E00FC9A52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B12DB4552447A71E00FC9A52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B12DB45A2447A71F00FC9A52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B12DB45D2447A71F00FC9A52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,6 +91,8 @@
 		B101877F2565E0D200228A88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B10187812565E0D200228A88 /* SceneDelegate.swift */,
+				B10187802565E0D200228A88 /* AppDelegate.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -124,8 +122,6 @@
 				B1E5869B256738E90095F91E /* Configuration */,
 				B1E58697256738A60095F91E /* Managers */,
 				B1E58692256738710095F91E /* Models */,
-				B10187802565E0D200228A88 /* AppDelegate.swift */,
-				B10187812565E0D200228A88 /* SceneDelegate.swift */,
 				B101877F2565E0D200228A88 /* Resources */,
 				B1D194CB2458D2B8008E7E44 /* SettingsView */,
 				B1CF56382456FD810059B48E /* DebugInfo */,
@@ -135,8 +131,6 @@
 				B1BFC442244937EE001021F6 /* LoadingAnimation */,
 				B1BFC43F24492F50001021F6 /* SearchBar */,
 				B1BFC43C24492EAF001021F6 /* StackCards */,
-				B12DB4512447A71E00FC9A52 /* AppDelegate.swift */,
-				B12DB4532447A71E00FC9A52 /* SceneDelegate.swift */,
 				B12DB4552447A71E00FC9A52 /* ContentView.swift */,
 				B18C5ED82449BEDF0031214F /* GoogleService-Info.plist */,
 				B12DB45C2447A71F00FC9A52 /* LaunchScreen.storyboard */,
@@ -433,11 +427,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B10187822565E0D200228A88 /* AppDelegate.swift in Sources */,
-				B12DB4522447A71E00FC9A52 /* AppDelegate.swift in Sources */,
 				B1CF563A2456FDA40059B48E /* DebugScreenView.swift in Sources */,
 				B124F5F6244A51FA0061EF65 /* ResultTableview.swift in Sources */,
 				B1D194CD2458D2D4008E7E44 /* MainSettingsScreen.swift in Sources */,
-				B12DB4542447A71E00FC9A52 /* SceneDelegate.swift in Sources */,
 				B173650A244B8B3800246AD5 /* LocationDetail.swift in Sources */,
 				B1BFC44124492F89001021F6 /* TopSearchBar.swift in Sources */,
 				B1E5867B256737240095F91E /* CurrentLocationweatherView.swift in Sources */,
