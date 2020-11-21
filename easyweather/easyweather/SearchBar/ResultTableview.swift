@@ -20,7 +20,6 @@ var tappedLocation = ""
 struct tableView : View {
     var searchText:String = ""
     @State var isCurrentLocationViewPresented = false
-
     var names : [String]=[]
     @State var show = false
     
@@ -37,11 +36,15 @@ struct tableView : View {
             } else if searchText.count > 2{
                 List(PlacesAutoComplete(locationName: searchText),id:\.self){ name in
                     Button(name){
-                        self.isCurrentLocationViewPresented = true
+                                            
                         tappedLocation = name
-                        WeatherDataManager().getWeatherForLocations(locationName: name)
+                        WeatherDataManager().getWeatherForLocations(locationName: name, completion: {
+                             self.isCurrentLocationViewPresented = true
+                        })
+                  
+
                     }
-                }.sheet(isPresented: $isCurrentLocationViewPresented){
+                } .sheet(isPresented: $isCurrentLocationViewPresented){
                      CurrentLocationweatherView(searchedLocation: tappedLocation)
                 }
             }
@@ -68,8 +71,7 @@ func PlacesAutoComplete(locationName:String) ->[String]{
     let filter = GMSAutocompleteFilter()
     
     filter.type = .city
-    
-    placesClient.autocompleteQuery(locationName, bounds: nil, filter: filter, callback: {(results, error) -> Void in
+    placesClient.findAutocompletePredictions(fromQuery: locationName, filter: filter, sessionToken: nil) { (results, error) in
         if let error = error {
             print("Autocomplete error \(error)")
             return
@@ -88,8 +90,28 @@ func PlacesAutoComplete(locationName:String) ->[String]{
             }
             
         }
-        
-    })
+    }
+//    placesClient.findAutocompletePredictions(locationName, bounds: nil, filter: filter, callback: {(results, error) -> Void in
+//        if let error = error {
+//            print("Autocomplete error \(error)")
+//            return
+//        }
+//        locationResultArray.removeAll()
+//        if let results = results{
+//            for result in results {
+//                print(result.placeID)
+//                DispatchQueue.main.async {
+//                    if !locationResultArray.contains(result.attributedPrimaryText.string){
+//                        print("location array inside closure \(locationResultArray)")
+//                        placeID = result.placeID
+//                        return  locationResultArray.append(result.attributedPrimaryText.string)
+//                    }
+//                }
+//            }
+//
+//        }
+//
+//    })
     let lat = GetLatLonFromPlaceId(placeId: placeID)
     print("LAT = \(lat)")
     print("location array outside \(locationResultArray)")
@@ -99,7 +121,7 @@ func PlacesAutoComplete(locationName:String) ->[String]{
 func GetLatLonFromPlaceId(placeId:String) -> [Double] {
     var placeIdArray = [Double]()
     //"ChIJmb1k2ko-eUgRqdwTAv26rVE"
-    let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.coordinate.rawValue))!
+    let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.coordinate.rawValue))
     placesClient.fetchPlace(fromPlaceID:placeId , placeFields:fields, sessionToken: .none) { (placeDetail, error) in
         if let error = error{
             print(error.localizedDescription)

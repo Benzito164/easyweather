@@ -16,6 +16,7 @@ struct CurrentLocationweatherView: View {
 
     var body: some View {
         VStack{
+            Text("Swipe down to dismiss")
             ZStack{
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
                     .fill(LinearGradient(gradient: Gradient(colors: [.blue, .gray, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -29,23 +30,24 @@ struct CurrentLocationweatherView: View {
                         .foregroundColor(.white)
                         .padding(.bottom, 22)
                     HStack{
-                        Text("10°C")
+                        Text("\(weatherInformation[0].main.temp.shortValue)°C")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.white)
                     }
                     
                     
-                    loadImageFromResource(imageName: weatherInformation.count > 1 ? weatherInformation[0].weather[0].icon :"winter.png")
-                       // WebImage(url:URL(string: weatherInformation[0].weather[0].icon))
+                  //loadImageFromResource(imageName: weatherInformation.count > 1 ? weatherInformation[0].weather[0].icon :"winter.png")
+                   // let urlString = "http://openweathermap.org/img/wn/\(weatherInformation[0].weather[0].icon)@4x.png"
+                    WebImage(url:URL(string: WeatherEndPoint.getWeatherIconUrl(data: weatherInformation[0].weather[0].icon)))
                         .resizable()
                         .frame(width: 100, height: 100, alignment: .top)
-                    Text("Clear Sky")
+                    Text(weatherInformation.count > 0 ? weatherInformation[0].weather[0].main : "No Data")
                         .fontWeight(.bold)
                         .font(.title)
                         .foregroundColor(.white)
                     Text("--------------")
-                    Text(weatherInformation.count > 1 ? weatherInformation[0].weather[0].description : "Humidity 100")
+                    Text(weatherInformation.count > 0 ? weatherInformation[0].weather[0].description : "No Data")
                         .fontWeight(.bold)
                         .font(.title)
                         .foregroundColor(.white)

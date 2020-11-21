@@ -66,7 +66,7 @@ struct TopSearchBar : View {
                             loadImageFromResource(imageName: "search.png")
                                 .resizable()
                                 .frame(width: 20, height: 20)
-                                .foregroundColor(Color.purple)
+                                .foregroundColor(Color.red)
                                 .scaledToFit()
                                 .padding(10)
                          }

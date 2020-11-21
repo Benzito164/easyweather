@@ -22,29 +22,29 @@ class WeatherDataManager {
         //  getWeatherForLocations(locationName: "London")
     }
     
-    func getWeatherForLocations(locationName:String){
-        
-        let testUrl = "\(WeatherEndPoint.currentLocationWeatherUrl)?q=\(locationName)&appid=\(WeatherEndPoint.key)"
-        
+    func getWeatherForLocations(locationName:String, completion:@escaping ()->()){
+        WeatherDataManager.currentWeatherData.removeAll()
+        let testUrl = "\(WeatherEndPoint.currentLocationWeatherUrl)?q=\(locationName)&appid=\(WeatherEndPoint.key)&units=metric"
+        print(testUrl)
         guard let formatedUrl = URL(string: testUrl) else {
             print("invalid URL")
             return
         }
         
         let request = URLRequest(url: formatedUrl)
-        
         URLSession.shared.dataTask(with: request){
             data,response,error in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode(CurrentLocationWeatherModel.self, from:data){
                     DispatchQueue.main.async {
                         WeatherDataManager.self.currentWeatherData.append(decodedResponse)
+                        completion()
                     }
                     print("decoded response = \(decodedResponse)")
                     return
                 }
             }
-            print(self.results)
+            print("EMPTY++++++++++++++++++++++++++++++++++++++++++++++++++")
         }.resume()
         
         

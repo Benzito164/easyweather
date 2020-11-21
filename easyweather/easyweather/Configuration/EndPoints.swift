@@ -14,4 +14,7 @@ struct WeatherEndPoint {
     static var currentLocationWeatherUrl = "http://api.openweathermap.org/data/2.5/weather"
     static var fiveDayWeatherUrl = "http://api.openweathermap.org/data/2.5/forecast"
     
+    static func getWeatherIconUrl(data:String) -> String {
+        return "http://openweathermap.org/img/wn/\(data)@4x.png"
+    }
 }

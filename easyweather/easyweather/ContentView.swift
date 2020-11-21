@@ -18,19 +18,16 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 Spacer().frame(height:0)
-                VStack(spacing:-29){
-                    TopSearchBar().padding(.bottom, 10)
+                VStack(spacing:-39){
+                    TopSearchBar()
                     if displayLabel {
-                        LabelShimmer().padding(.bottom,60)
+                        LabelShimmer().padding(.bottom,190)
                     } else
                     {
                         LabelShimmer()
                             .hidden()
-                           .padding(.bottom,1)
-                        
+                           .padding(.bottom,190)
                     }
-                    
-                     
                     Cards()
                     Spacer()
                 }
@@ -61,9 +58,9 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
        Group {
-                  ContentView()
-                     .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-                     .previewDisplayName("iPhone 12")
+        ContentView()
+           .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+           .previewDisplayName("iPhone SE")
 
 //                  ContentView()
 //                     .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))

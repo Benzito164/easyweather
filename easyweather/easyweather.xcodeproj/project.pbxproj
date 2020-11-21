@@ -38,6 +38,7 @@
 		B1E58694256738710095F91E /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E58693256738710095F91E /* WeatherModel.swift */; };
 		B1E58699256738A60095F91E /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E58698256738A60095F91E /* WeatherManager.swift */; };
 		B1E5869D256738E90095F91E /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5869C256738E90095F91E /* EndPoints.swift */; };
+		B1FAD7682569A13600BE5277 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FAD7672569A13600BE5277 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		B1E58693256738710095F91E /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		B1E58698256738A60095F91E /* WeatherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		B1E5869C256738E90095F91E /* EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		B1FAD7672569A13600BE5277 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EB1E4F495328563022A5C93C /* Pods-easyweather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyweather.release.xcconfig"; path = "Target Support Files/Pods-easyweather/Pods-easyweather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 		B12DB4502447A71E00FC9A52 /* easyweather */ = {
 			isa = PBXGroup;
 			children = (
+				B1FAD7662569A11B00BE5277 /* Helpers */,
 				B1E5869B256738E90095F91E /* Configuration */,
 				B1E58697256738A60095F91E /* Managers */,
 				B1E58692256738710095F91E /* Models */,
@@ -242,6 +245,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		B1FAD7662569A11B00BE5277 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B1FAD7672569A13600BE5277 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		BD1443F66528144F869ED9F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,14 +283,13 @@
 				B12DB44C2447A71E00FC9A52 /* Resources */,
 				EA4E878C14CC76ABAAE44C0A /* [CP] Embed Pods Frameworks */,
 				B1CF563B245708430059B48E /* ShellScript */,
+				1B44D9792E0B3FB667B2D83C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = easyweather;
-			packageProductDependencies = (
-			);
 			productName = easyweather;
 			productReference = B12DB44E2447A71E00FC9A52 /* easyweather.app */;
 			productType = "com.apple.product-type.application";
@@ -308,8 +318,6 @@
 				Base,
 			);
 			mainGroup = B12DB4452447A71E00FC9A52;
-			packageReferences = (
-			);
 			productRefGroup = B12DB44F2447A71E00FC9A52 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +352,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1B44D9792E0B3FB667B2D83C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-easyweather/Pods-easyweather-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-easyweather/Pods-easyweather-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-easyweather/Pods-easyweather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AECC1D24B402094B074B2E1B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +446,7 @@
 				B1BFC43E24492EE2001021F6 /* Cards.swift in Sources */,
 				B1E58699256738A60095F91E /* WeatherManager.swift in Sources */,
 				B1BFC44424493845001021F6 /* CircleLoadingAnimation.swift in Sources */,
+				B1FAD7682569A13600BE5277 /* Extensions.swift in Sources */,
 				B1E5869D256738E90095F91E /* EndPoints.swift in Sources */,
 				B10187832565E0D200228A88 /* SceneDelegate.swift in Sources */,
 			);

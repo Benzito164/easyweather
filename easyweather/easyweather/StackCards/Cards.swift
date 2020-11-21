@@ -185,7 +185,7 @@ struct Cards:View {
            
         GeometryReader{reader in
                 
-            ZStack{
+            ZStack(){
                 
                 self.thirdCard(currentReader: reader)
                 
@@ -193,13 +193,14 @@ struct Cards:View {
                 
                 self.firstCard(currentReader: reader)
             }
+            .padding(.horizontal,35)
                 .animation(.spring())
                 
             
         }
         .onAppear{
         withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: true)){
-            self.show.toggle()
+       //     self.show.toggle()
         }
         }
 
@@ -208,7 +209,7 @@ struct Cards:View {
 
 struct LabelShimmer : View {
     
-    @State var show = false
+    @State var show = true
     var center = (UIScreen.main.bounds.width / 2) + 110
     
     var body : some View{
@@ -238,7 +239,7 @@ struct LabelShimmer : View {
 
             withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: false)){
 
-                self.show.toggle()
+//                self.show.toggle()
             }
         }
     }
