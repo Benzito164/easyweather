@@ -64,7 +64,7 @@ struct CurrentLocationweatherView: View {
             //                    .font(.title)
             
             
-        }.preferredColorScheme(.dark)
+        }
     }
 }
 

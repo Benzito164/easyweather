@@ -79,7 +79,6 @@ struct TopSearchBar : View {
                     self.showSettingsScreen.toggle()
                 }){
                     loadImageFromResource(imageName:"SettingsIcon.png")
-                        //.renderingMode(Image.TemplateRenderingMode.original)
                         .resizable()
                         .buttonStyle(GradientButtonStyle())
                         .frame(width: 30, height: 30)

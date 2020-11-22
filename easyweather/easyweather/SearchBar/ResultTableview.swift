@@ -36,13 +36,10 @@ struct tableView : View {
             } else if searchText.count > 2{
                 List(PlacesAutoComplete(locationName: searchText),id:\.self){ name in
                     Button(name){
-                                            
                         tappedLocation = name
                         WeatherDataManager().getWeatherForLocations(locationName: name, completion: {
                              self.isCurrentLocationViewPresented = true
                         })
-                  
-
                     }
                 } .sheet(isPresented: $isCurrentLocationViewPresented){
                      CurrentLocationweatherView(searchedLocation: tappedLocation)

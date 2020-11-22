@@ -13,13 +13,36 @@ struct ContentView: View {
     @State var displayLabel = true
     @State var spacingAfterTextIsHidden:Int = 0
     @State var showDebugScreen = false
+    @State var showSettingsScreen = false
     @State private var timer = Timer.publish(every: 5.0, on: .main, in: RunLoop.Mode.common).autoconnect()
     var body: some View {
         NavigationView{
             VStack{
                 Spacer().frame(height:0)
                 VStack(spacing:-39){
-                    TopSearchBar()
+                    HStack{
+                        NavigationLink(destination: SearchView()) {
+                            loadImageFromResource(imageName: "search.png")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(Color.purple)
+                            .scaledToFit()
+                            .padding(.horizontal,8)
+                        }.navigationBarTitle("Home", displayMode: .inline)
+                        Spacer(minLength: -10)
+                        Button(action: {
+                            self.showSettingsScreen.toggle()
+                        }){
+                            loadImageFromResource(imageName:"SettingsIcon.png")
+                                .resizable()
+                                .buttonStyle(GradientButtonStyle())
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(.purple)
+                        }.sheet(isPresented: $showSettingsScreen){
+                            MainSettingsScreen()
+                        }
+                    }.padding(.horizontal)
+
                     if displayLabel {
                         LabelShimmer().padding(.bottom,190)
                     } else
@@ -51,7 +74,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Weather")
             .navigationBarHidden(true)
-        }//.preferredColorScheme(.dark)
+        }.preferredColorScheme(.light)
     }
 }
 
@@ -62,9 +85,6 @@ struct ContentView_Previews: PreviewProvider {
            .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
            .previewDisplayName("iPhone SE")
 
-//                  ContentView()
-//                     .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
-//                     .previewDisplayName("iPhone 11 Pro Max")
               }
     }
 }
