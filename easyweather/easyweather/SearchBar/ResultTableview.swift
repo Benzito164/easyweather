@@ -29,9 +29,9 @@ struct tableView : View {
         VStack{
             if searchText.isEmpty{        
                 List{
-                    Text("No Results found")
+                    Text("")
                         .padding()
-                        .cornerRadius(13).listRowBackground(Color.red.opacity(0.2))
+                        .cornerRadius(13).listRowBackground(Color.white.opacity(0.2))
                 }
             } else if searchText.count > 2{
                 List(PlacesAutoComplete(locationName: searchText),id:\.self){ name in
