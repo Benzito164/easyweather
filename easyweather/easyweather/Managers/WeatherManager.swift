@@ -17,16 +17,14 @@ class WeatherDataManager {
     static var hourlyWeatherData:[HourlyWeatherModel] = []
     static var currentWeatherData:[CurrentLocationWeatherModel] = []
     
-    init() {
-        //  getHourlyWeatherForLocation(locationName: "London")
-        //  getWeatherForLocations(locationName: "London")
-    }
+
     
     func getWeatherForLocations(locationName:String, completion:@escaping ()->()){
         WeatherDataManager.currentWeatherData.removeAll()
         let testUrl = "\(WeatherEndPoint.currentLocationWeatherUrl)?q=\(locationName)&appid=\(WeatherEndPoint.key)&units=metric"
-        print(testUrl)
-        guard let formatedUrl = URL(string: testUrl) else {
+        let urlString = testUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        print(urlString)
+        guard let formatedUrl = URL(string: urlString ?? testUrl) else {
             print("invalid URL")
             return
         }
@@ -91,41 +89,5 @@ class WeatherDataManager {
     }
     
     
-    static func getweather(locationName:String, completion:@escaping ([WeatherModel])->()){
-        
-        let testUrl = "\(WeatherEndPoint.currentLocationWeatherUrl)?q=\(locationName)&appid=\(WeatherEndPoint.key)"
-        let session = URLSession.shared
-        let url = URL(string: testUrl)!
-        
-        let task = session.dataTask(with: url) { data, response, error in
-            
-            if error != nil || data == nil {
-                print("Client error!")
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("Server error!")
-                return
-            }
-            
-            guard let mime = response.mimeType, mime == "application/json" else {
-                print("Wrong MIME type!")
-                return
-            }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                print(json)
-                DispatchQueue.main.async {
-                    completion(json as! [WeatherModel])
-                }
-                
-            } catch {
-                print("JSON error: \(error.localizedDescription)")
-            }
-        }
-        
-        task.resume()
-    }
+    
 }

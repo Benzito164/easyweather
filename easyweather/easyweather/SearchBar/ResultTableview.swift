@@ -27,7 +27,7 @@ struct tableView : View {
     
     var body: some View {
         VStack{
-            if searchText.isEmpty{        
+            if searchText.count <= 2 {        
                 List{
                     Text("")
                         .padding()
