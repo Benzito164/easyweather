@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 
 
@@ -17,13 +18,15 @@ struct Cards:View {
     @State var show = false
     @State var showLocationDetailFromStackedCards = false
     var center = (UIScreen.main.bounds.width / 2) + 110
+    @State  var weatherInformation:[CurrentLocationWeatherModel] = WeatherDataManager.savedLocationsWeatherData
     
-    fileprivate func secoundCard(currentReader : GeometryProxy) -> some View {
+    fileprivate func secoundCard(currentReader : GeometryProxy,data:CurrentLocationWeatherModel) -> some View {
         return ZStack{
             Color.orange
             VStack(spacing: 5){
                 HStack{
-                    loadImageFromResource(imageName: "wet.png")
+                    WebImage(url:URL(string: WeatherEndPoint.getWeatherIconUrl(data: data.weather[0].icon)))
+                  //  loadImageFromResource(imageName: "wet.png")
                         .resizable()
                         .frame(width: 70, height: 70)
                         .padding()
@@ -32,7 +35,7 @@ struct Cards:View {
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.white)
-                        Text("London")
+                        Text( weatherInformation.count > 0 ? data.weather[0].description:"NO DATA")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.white)
@@ -189,7 +192,7 @@ struct Cards:View {
                 
                 self.thirdCard(currentReader: reader)
                 
-                self.secoundCard(currentReader: reader)
+                self.secoundCard(currentReader: reader,data: weatherInformation[0])
                 
                 self.firstCard(currentReader: reader)
             }
@@ -247,6 +250,6 @@ struct LabelShimmer : View {
 
 struct Cards_Previews: PreviewProvider {
     static var previews: some View {
-       Cards()
+      Cards()
     }
 }

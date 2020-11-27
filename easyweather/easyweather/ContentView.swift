@@ -14,6 +14,8 @@ struct ContentView: View {
     @State var spacingAfterTextIsHidden:Int = 0
     @State var showDebugScreen = false
     @State var showSettingsScreen = false
+    @State var displayCards = false
+    var savedLocationsArray = ["Chester","Hull"]
     @State private var timer = Timer.publish(every: 5.0, on: .main, in: RunLoop.Mode.common).autoconnect()
     var body: some View {
         NavigationView{
@@ -42,6 +44,14 @@ struct ContentView: View {
                             MainSettingsScreen()
                         }
                     }.padding(.horizontal)
+                    .onAppear(){
+                        savedLocationsArray.forEach { (location) in
+                            let WDM = WeatherDataManager()
+                            WDM.getWeatherForSavedLocations(locationName: location) {
+                                self.displayCards = true
+                            }
+                        }
+                    }
 
                     if displayLabel {
                         LabelShimmer().padding(.bottom,190)
@@ -51,7 +61,10 @@ struct ContentView: View {
                             .hidden()
                            .padding(.bottom,190)
                     }
-                    Cards()
+                    if displayCards{
+                        Cards()
+                    }
+                    
                     Spacer()
                 }
                 Button(action: {

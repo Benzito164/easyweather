@@ -88,27 +88,7 @@ func PlacesAutoComplete(locationName:String) ->[String]{
             
         }
     }
-//    placesClient.findAutocompletePredictions(locationName, bounds: nil, filter: filter, callback: {(results, error) -> Void in
-//        if let error = error {
-//            print("Autocomplete error \(error)")
-//            return
-//        }
-//        locationResultArray.removeAll()
-//        if let results = results{
-//            for result in results {
-//                print(result.placeID)
-//                DispatchQueue.main.async {
-//                    if !locationResultArray.contains(result.attributedPrimaryText.string){
-//                        print("location array inside closure \(locationResultArray)")
-//                        placeID = result.placeID
-//                        return  locationResultArray.append(result.attributedPrimaryText.string)
-//                    }
-//                }
-//            }
-//
-//        }
-//
-//    })
+
     let lat = GetLatLonFromPlaceId(placeId: placeID)
     print("LAT = \(lat)")
     print("location array outside \(locationResultArray)")
