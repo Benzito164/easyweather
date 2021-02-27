@@ -8,14 +8,18 @@
 
 import SwiftUI
 
-
+var savedLocationsArray = ["Chester","Hull","leeds"]
 struct ContentView: View {
     @State var displayLabel = true
     @State var spacingAfterTextIsHidden:Int = 0
     @State var showDebugScreen = false
     @State var showSettingsScreen = false
     @State var displayCards = false
-    var savedLocationsArray = ["Chester","Hull"]
+    @State var displaySavedCardsWeatherView = false
+    @State var savedLocationData = WeatherDataManager.savedLocationsWeatherData
+    @State var valueChanged = false
+    @State var sampleText = "H"
+    
     @State private var timer = Timer.publish(every: 5.0, on: .main, in: RunLoop.Mode.common).autoconnect()
     var body: some View {
         NavigationView{
@@ -30,6 +34,7 @@ struct ContentView: View {
                             .foregroundColor(Color.purple)
                             .scaledToFit()
                             .padding(.horizontal,8)
+                            
                         }.navigationBarTitle("Home", displayMode: .inline)
                         Spacer(minLength: -10)
                         Button(action: {
@@ -43,12 +48,20 @@ struct ContentView: View {
                         }.sheet(isPresented: $showSettingsScreen){
                             MainSettingsScreen()
                         }
-                    }.padding(.horizontal)
+                    }
+                    .padding(.horizontal)
                     .onAppear(){
+                        print("on appear")
+                       self.displayCards = false
+                        let WDM = WeatherDataManager()
+                        var iterationCounter = 0
                         savedLocationsArray.forEach { (location) in
-                            let WDM = WeatherDataManager()
                             WDM.getWeatherForSavedLocations(locationName: location) {
-                                self.displayCards = true
+                                iterationCounter+=1
+                                if savedLocationsArray.count == iterationCounter {
+                                    self.displayCards = true
+                                }
+                                
                             }
                         }
                     }
@@ -62,13 +75,19 @@ struct ContentView: View {
                            .padding(.bottom,190)
                     }
                     if displayCards{
-                        Cards()
+                        Cards(weatherInformation: WeatherDataManager.savedLocationsWeatherData, valueChanged: $valueChanged).onTapGesture {
+                            var number = 1
+                            sampleText = "\(sampleText)\(number+=1)"
+                        }
+                        
                     }
-                    
+                  
+                    Text(sampleText).padding(.bottom,40)
                     Spacer()
                 }
                 Button(action: {
                     self.showDebugScreen.toggle()
+                    self.valueChanged.toggle()
                 }){
                     loadImageFromResource(imageName:"infoIcon.png")
                         .renderingMode(Image.TemplateRenderingMode.original)

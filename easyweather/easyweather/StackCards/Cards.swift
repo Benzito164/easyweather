@@ -18,9 +18,10 @@ struct Cards:View {
     @State var show = false
     @State var showLocationDetailFromStackedCards = false
     var center = (UIScreen.main.bounds.width / 2) + 110
-    @State  var weatherInformation:[CurrentLocationWeatherModel] = WeatherDataManager.savedLocationsWeatherData
+    @State  var weatherInformation:[CurrentLocationWeatherModel] // = WeatherDataManager.savedLocationsWeatherData
+    @State var valueChanged:Binding<Bool>
     
-    fileprivate func secoundCard(currentReader : GeometryProxy,data:CurrentLocationWeatherModel) -> some View {
+    fileprivate func secoundCard(currentReader : GeometryProxy,data:CurrentLocationWeatherModel,valueChanged:Binding<Bool>) -> some View {
         return ZStack{
             Color.orange
             VStack(spacing: 5){
@@ -31,15 +32,15 @@ struct Cards:View {
                         .frame(width: 70, height: 70)
                         .padding()
                     VStack{
-                        Text("0°C")
+                        Text( weatherInformation.count > 0 ? "\(data.main.temp.shortValue)°C":"NO DATA")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.white)
-                        Text( weatherInformation.count > 0 ? data.weather[0].description:"NO DATA")
+                        Text( weatherInformation.count > 0 ? data.name:"NO DATA")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.white)
-                        Text("Wet")
+                        Text(weatherInformation.count > 0 ? data.weather[0].description:"NO DATA")
                             .fontWeight(.bold)
                             .font(.subheadline)
                             .foregroundColor(.white)
@@ -70,25 +71,26 @@ struct Cards:View {
             .offset(y:self.size.height > 1 ? -120 : -80)
     }
     
-    fileprivate func thirdCard(currentReader : GeometryProxy) -> some View {
+    fileprivate func thirdCard(currentReader : GeometryProxy,data:CurrentLocationWeatherModel,valueChanged:Binding<Bool>) -> some View {
         return ZStack{
             Color.blue
             VStack(spacing: 5){
                 HStack{
-                    loadImageFromResource(imageName: "summer.png")
-                    .resizable()
-                    .frame(width: 70, height: 70)
-                    .padding()
+                    WebImage(url:URL(string: WeatherEndPoint.getWeatherIconUrl(data: data.weather[0].icon)))
+                  //  loadImageFromResource(imageName: "wet.png")
+                        .resizable()
+                        .frame(width: 70, height: 70)
+                        .padding()
                     VStack{
-                        Text("10°C")
+                        Text( weatherInformation.count > 0 ? "\(data.main.temp.shortValue)°C":"NO DATA")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.white)
-                        Text("Liverpool")
+                        Text( weatherInformation.count > 0 ? data.name:"NO DATA")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.white)
-                        Text("Sunny")
+                        Text(weatherInformation.count > 0 ? data.weather[0].description:"NO DATA")
                             .fontWeight(.bold)
                             .font(.subheadline)
                             .foregroundColor(.white)
@@ -116,26 +118,27 @@ struct Cards:View {
         )
             .offset(y:self.size.height > 1 ? -(self.size.height+250) : -160)
     }
-    
-    fileprivate func firstCard(currentReader: GeometryProxy) -> some View {
+    @State static var location = ""
+    fileprivate func firstCard(currentReader: GeometryProxy,data:CurrentLocationWeatherModel,valueChanged:Binding<Bool>) -> some View {
         return ZStack{
             Color.red
             VStack(spacing: 5){
                 HStack{
-                    loadImageFromResource(imageName: "winter.png")
+                    WebImage(url:URL(string: WeatherEndPoint.getWeatherIconUrl(data: data.weather[0].icon)))
+                  //  loadImageFromResource(imageName: "wet.png")
                         .resizable()
                         .frame(width: 70, height: 70)
                         .padding()
                     VStack{
-                        Text("4°C")
+                        Text( weatherInformation.count > 0 ? "\(data.main.temp.shortValue)°C":"NO DATA")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.white)
-                        Text("Exeter")
+                        Text( weatherInformation.count > 0 ? data.name:"NO DATA")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(.white)
-                        Text("Snowy")
+                        Text(weatherInformation.count > 0 ? data.weather[0].description:"NO DATA")
                             .fontWeight(.bold)
                             .font(.subheadline)
                             .foregroundColor(.white)
@@ -190,16 +193,14 @@ struct Cards:View {
                 
             ZStack(){
                 
-                self.thirdCard(currentReader: reader)
+                self.thirdCard(currentReader: reader,data: weatherInformation[2], valueChanged: valueChanged)
                 
-                self.secoundCard(currentReader: reader,data: weatherInformation[0])
+                self.secoundCard(currentReader: reader,data: weatherInformation[1], valueChanged: valueChanged)
                 
-                self.firstCard(currentReader: reader)
+                self.firstCard(currentReader: reader,data: weatherInformation[0], valueChanged: valueChanged)
             }
             .padding(.horizontal,35)
-                .animation(.spring())
-                
-            
+            .animation(.spring())
         }
         .onAppear{
         withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: true)){
@@ -248,8 +249,8 @@ struct LabelShimmer : View {
     }
 }
 
-struct Cards_Previews: PreviewProvider {
-    static var previews: some View {
-      Cards()
-    }
-}
+//struct Cards_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Cards( weatherInformation: WeatherDataManager.savedLocationsWeatherData, valueChanged: valueChanged)
+//    }
+//}

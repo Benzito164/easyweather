@@ -53,6 +53,8 @@ struct SearchView: View {
                   .transition(.move(edge: .trailing))
                   .animation(.spring())
               }
+            }.onDisappear(){
+                print("search view gone!")
             }
             ResultTableview(searchText: text)
         }.padding(.vertical,6)

@@ -16,7 +16,7 @@ class WeatherDataManager {
     @State var  weatherResults: HourlyWeatherModel!
     static var hourlyWeatherData:[HourlyWeatherModel] = []
     static var currentWeatherData:[CurrentLocationWeatherModel] = []
-    static var savedLocationsWeatherData:[CurrentLocationWeatherModel] = []
+     static var savedLocationsWeatherData:[CurrentLocationWeatherModel] = []
     
     
 
@@ -44,7 +44,7 @@ class WeatherDataManager {
                     return
                 }
             }
-            print("EMPTY++++++++++++++++++++++++++++++++++++++++++++++++++")
+            print("EMPTY")
         }.resume()
     }
     

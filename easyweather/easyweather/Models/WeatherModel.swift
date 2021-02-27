@@ -16,6 +16,7 @@ struct WeatherResponse: Decodable {
 struct CurrentLocationWeatherModel:Decodable {
     var weather:[WeatherInfo]
     let main:MainTemp
+    let name:String
 }
 
 struct WeatherModel:Decodable {
